@@ -1,0 +1,11 @@
+name: project_vortex_layout
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - jupyter
+  - pip
+  - pip:
+      - klayout

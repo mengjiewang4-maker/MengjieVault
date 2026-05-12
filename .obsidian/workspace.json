@@ -1,0 +1,290 @@
+{
+  "main": {
+    "id": "1a14aa2d95c06e46",
+    "type": "split",
+    "children": [
+      {
+        "id": "612f2cb461171563",
+        "type": "split",
+        "children": [
+          {
+            "id": "533493e0a27ec070",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "ec5559f5e79be467",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "演示/演示/量子激光雷达/01.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "01"
+                }
+              }
+            ]
+          },
+          {
+            "id": "23cb2498b8f871a8",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "4e077bc012cf75ab",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "terminal:terminal",
+                  "state": {
+                    "terminal:terminal": {
+                      "cwd": "/Users/mac/Documents/mengjie/MengjieVault",
+                      "focus": false,
+                      "profile": {
+                        "args": [
+                          "--login"
+                        ],
+                        "executable": "/bin/zsh",
+                        "followTheme": true,
+                        "name": "",
+                        "platforms": {
+                          "darwin": true
+                        },
+                        "pythonExecutable": "python3",
+                        "restoreHistory": false,
+                        "rightClickAction": "copyPaste",
+                        "successExitCodes": [
+                          "0",
+                          "SIGINT",
+                          "SIGTERM"
+                        ],
+                        "terminalOptions": {
+                          "documentOverride": null
+                        },
+                        "type": "integrated",
+                        "useWin32Conhost": true
+                      },
+                      "serial": null
+                    }
+                  },
+                  "pinned": true,
+                  "icon": "terminal",
+                  "title": "终端：[ . ] Action Required | MengjieVault"
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "horizontal"
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "63a23fb8c1b3b9ed",
+    "type": "split",
+    "children": [
+      {
+        "id": "fd9b5b8286c35744",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a518e11863c8fd09",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "796d2b597018186c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "18cfd0322ea15b49",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "b68edeb1a56b7684",
+    "type": "split",
+    "children": [
+      {
+        "id": "0b04a255130b08ef",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "99ea788db566aca3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "反向链接"
+            }
+          },
+          {
+            "id": "8067782ecb755d58",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "ResearchVaultshare/分享/用 Codex 和 Obsidian 构建交互式量子力学学习助手 v2.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "用 Codex 和 Obsidian 构建交互式量子力学学习助手 v2 的出链列表"
+            }
+          },
+          {
+            "id": "2bfda6c385c86ea6",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "11a98263d7922229",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "a58a71c09c2c90b4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "ResearchVaultshare/分享/用 Codex 和 Obsidian 构建交互式量子力学学习助手 v2.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "用 Codex 和 Obsidian 构建交互式量子力学学习助手 v2 的大纲"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "terminal:Open terminal": false,
+      "vscode-editor:新建代码文件": false
+    }
+  },
+  "active": "4e077bc012cf75ab",
+  "lastOpenFiles": [
+    "演示/演示/量子激光雷达/01.md",
+    "子仓库_git备份_不上传/codex_job",
+    "子仓库_git备份_不上传/ResearchVaultshare",
+    "子仓库_git备份_不上传/ResearchVault",
+    "子仓库_git备份_不上传/Photonics",
+    "子仓库_git备份_不上传",
+    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex/激光原理及应用(第四版) (陈家璧) (Z-Library).pdf",
+    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex/激光原理 (周炳琨, 高以智, 陈倜嵘, 陈家骅, 霍力编) (Z-Library).pdf",
+    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex/激光光学光束描述、传输变换与光腔技术物理 (吕百达) (Z-Library).pdf",
+    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex/涡旋光束 (高春清 付时尧) (Z-Library).pdf",
+    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex",
+    "codex_job/obsidian/raw/transcripts/README.md",
+    "随手记/git 流程.md",
+    "codex_job/obsidian/raw/papers/10_projects_proposals/王梦杰-2025-2025年国自然青年学生基础研究项目（博士研究生）+王梦杰+F0403.md",
+    "codex_job/obsidian/raw/papers/09_textbooks_reference/谢处方-电磁场与电磁波习题答案（第4版） (Z-Library)-unknown-谢处方-电磁场与电磁波习题答案（第4版） (Z-Library).md",
+    "codex_job/obsidian/raw/papers/08_condensed_matter_theory/Fractionalization in a square-lattice model with time-reversal symmetry-2007-Fractionalization in a square-lattice model with time-reversal symmetry.md",
+    "codex_job/obsidian/raw/papers/08_condensed_matter_theory/THE FLUX PHASE OF THE HALF-FILLED BAND-1994-THE FLUX PHASE OF THE HALF-FILLED BAND.md",
+    "codex_job/obsidian/raw/papers/08_condensed_matter_theory/zero modes of the vortex-fermion system-1981-zero modes of the vortex-fermion system.md",
+    "codex_job/obsidian/raw/papers/07_frequency_combs_microrings/Zhang-unknown-Broadband electro-optic frequency comb generation in a lithium niobate microring.md",
+    "codex_job/obsidian/raw/papers/06_nonlinear_ultrafast_lasers/王羡之-2021-非线性光学效应在飞秒超强激...比度及光强提升中的应用研究_王羡之.md",
+    "codex_job/obsidian/raw/papers/05_quantum_radar_computing/量子计算文档-unknown-量子计算文档.md",
+    "codex_job/obsidian/raw/papers/05_quantum_radar_computing/量子激光雷达研究综述（特邀）_红外与激光工程-2021-量子激光雷达研究综述（特邀）_红外与激光工程.md",
+    "codex_job/obsidian/raw/papers/05_quantum_radar_computing/量子雷达及其研究进展-unknown-量子雷达及其研究进展.md",
+    "codex_job/obsidian/raw/papers/04_metasurfaces_polarization/Zao-2010-Polarization cross coupling in asymmetric photonic waveguides.md",
+    "codex_job/obsidian/raw/papers/04_metasurfaces_polarization/Lin-2025-Chiral Metasurfaces with Multidimensional Tunability for Optical Chiral States.md",
+    "codex_job/obsidian/raw/papers/04_metasurfaces_polarization/超表面硅光偏振分束器制备及测试.md",
+    "codex_job/obsidian/raw/papers/03_topological_photonics/Song-2025-Nonlocality-enabled photonic analogies of parallel spaces, wormholes and multiple realitie.md",
+    "codex_job/obsidian/raw/papers/03_topological_photonics/拓扑光子学研究进展-2019-拓扑光子学研究进展.md",
+    "codex_job/obsidian/raw/papers/03_topological_photonics/胡梦莹-2021-光子晶体中拓扑半金属与拓扑界面态的研究(胡梦莹2021)_202412121807138397.md",
+    "codex_job/obsidian/raw/papers/03_topological_photonics/Mao-2025-A single-photon source based on topological bulk cavity.md",
+    "codex_job/obsidian/raw/papers/03_topological_photonics/Yang-unknown-Topological-cavity surface-emitting laser.md",
+    "codex_job/obsidian/raw/papers/03_topological_photonics/Dirac-vortex topological cavities.md",
+    "codex_job/obsidian/raw/papers/02_on_chip_lasers/王羡之-2018-全固态皮秒Nd_YVO_4激光器工程化研究_王羡之.md",
+    "codex_job/obsidian/raw/papers/02_on_chip_lasers/Javan-1961-Population Inversion and Continuous Optical Maser Oscillation in a Gas Discharge.md",
+    "codex_job/obsidian/raw/papers/02_on_chip_lasers/Coherent two-dimensional lasing action in surface-emitting laser withtriangular-lattice photonic crystal structure-1999-Coherent two-dimensional lasing action i.md",
+    "codex_job/obsidian/raw/papers/02_on_chip_lasers/Yang-2021-Single-Mode Semiconductor Nanowire Lasers With Coupled Cavities.md",
+    "codex_job/obsidian/outputs/reports/assets/硅基狄拉克涡旋腔交叉偏振反射光路.svg",
+    "ResearchVault/results/plots/quantum_models_overview.png",
+    "ResearchVault/results/plots/molecular_effective_potential.png",
+    "ResearchVault/results/plots/infinite_well_levels.png",
+    "ResearchVault/results/plots/identical_particle_exchange.png",
+    "ResearchVault/results/plots/hydrogen_radial_probabilities.png",
+    "ResearchVault/results/plots/harmonic_oscillator_states.png",
+    "ResearchVault/results/plots/harmonic_oscillator_matrices.png",
+    "ResearchVault/results/plots/free_gaussian_packet_spreading.png",
+    "ResearchVault/results/plots/fermi_occupation.png"
+  ]
+}

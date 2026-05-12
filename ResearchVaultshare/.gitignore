@@ -1,0 +1,11 @@
+.obsidian/workspace.json
+.obsidian/cache
+.obsidian/workspace-mobile.json
+
+.DS_Store
+.Trashes
+
+*.pyc
+__pycache__/
+
+.env

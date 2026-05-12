@@ -1,0 +1,28 @@
+# Python cache
+__pycache__/
+**/__pycache__/
+*.py[cod]
+
+# Jupyter / Python tooling
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.matplotlib/
+
+# Obsidian / editor state
+.obsidian/
+.obsidian/workspace.json
+**/.obsidian/workspace.json
+**/.obsidian/cache/
+
+# System files
+.DS_Store
+**/.DS_Store
+
+# Embedded repositories
+code/Project_Replication_Vortex/.git/
+code/Project_Replication_Vortex/.git.embedded.backup/
+
+# Generated images inside code workspaces
+code/**/*.png

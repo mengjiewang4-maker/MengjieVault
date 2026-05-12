@@ -1,0 +1,36 @@
+---
+title: "由此开始"
+source: "https://obsidian.md/zh/help/"
+author:
+published:
+created: 2026-04-28
+description: "迁移助手 - Obsidian 中文帮助"
+tags:
+  - "clippings"
+---
+## Obsidian 中文帮助
+
+欢迎来到 Obsidian 官方的帮助网站，在这里你可以找到关于如何使用 [Obsidian](https://obsidian.md/) 的提示和指南。关于 API 文档请访问 [Obsidian 开发者文档](https://docs.obsidian.md/) 。
+
+## 入门指南
+
+如果你是 Obsidian 的新手，可以通过以下指南来快速学习如何使用 Obsidian：
+
+此外，你可以通过 *插件* 来实现一些功能，提升自己的使用体验。请探索 Obsidian 预装的 [核心插件](https://obsidian.md/zh/help/plugins) ，或者我们的 [第三方插件](https://obsidian.md/zh/help/community-plugins) 。
+
+另外你也可以使用 [主题](https://obsidian.md/zh/help/themes) 和 [CSS 代码片段](https://obsidian.md/zh/help/snippets) 来自定义 Obsidian 的外观。
+
+## 附加服务
+
+- [Obsidian 官方同步](https://obsidian.md/zh/help/sync)
+	- 一种安全可靠的同步方式，从而在任何设备和操作系统上同步你的笔记。
+- [Obsidian 发布服务](https://obsidian.md/zh/help/publish)
+	- 将你的笔记发布为网站，从而构建你的维基、知识库、文档或数字花园。
+
+## 贡献
+
+如果发现本站点有任何错误或遗漏信息，欢迎通过 [GitHub 仓库](https://github.com/obsidianmd/obsidian-docs/) 参与改进和翻译。
+
+如果想在经济上支持 Obsidian，请考虑购买 [Catalyst 个人许可证](https://obsidian.md/zh/help/catalyst) ，该许可证提供内部版本的提前访问资格。
+
+查看 [贡献者](https://obsidian.md/zh/help/credits) 来了解那些让 Obsidian 成长至今的人。

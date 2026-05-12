@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="860" viewBox="0 0 1500 860" role="img" aria-labelledby="title desc">
+  <title id="title">硅基狄拉克涡旋腔交叉偏振反射测试光路</title>
+  <desc id="desc">可调谐激光经准直、功率调节和偏振控制后进入 PBS，再经反射镜与显微物镜照射 SOI Dirac-vortex 腔。样品返回的交叉偏振信号由 PBS 分离，经翻转镜切换到光谱探测器或近场、远场成像相机。</desc>
+  <defs>
+    <marker id="arrow-pump" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-signal" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#0f766e"/>
+    </marker>
+    <marker id="arrow-gray" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .panel { fill: #ffffff; stroke: #cbd5e1; stroke-width: 1.5; rx: 8; }
+      .source { fill: #eef2ff; stroke: #4338ca; stroke-width: 2; rx: 8; }
+      .optic { fill: #e0f2fe; stroke: #0369a1; stroke-width: 2; rx: 8; }
+      .polar { fill: #fef9c3; stroke: #a16207; stroke-width: 2; rx: 8; }
+      .sample { fill: #fee2e2; stroke: #b91c1c; stroke-width: 2; rx: 8; }
+      .detector { fill: #dcfce7; stroke: #15803d; stroke-width: 2; rx: 8; }
+      .camera { fill: #f3e8ff; stroke: #7e22ce; stroke-width: 2; rx: 8; }
+      .note { fill: #f8fafc; stroke: #94a3b8; stroke-width: 1.5; rx: 8; }
+      .chip { fill: #cbd5e1; stroke: #475569; stroke-width: 1.5; }
+      .cavity { fill: #ef4444; stroke: #991b1b; stroke-width: 1.5; }
+      .lens { fill: #bae6fd; stroke: #0369a1; stroke-width: 2; }
+      .pump { stroke: #2563eb; stroke-width: 5; fill: none; marker-end: url(#arrow-pump); stroke-linecap: round; stroke-linejoin: round; }
+      .signal { stroke: #0f766e; stroke-width: 5; fill: none; marker-end: url(#arrow-signal); stroke-linecap: round; stroke-linejoin: round; }
+      .route { stroke: #64748b; stroke-width: 2.4; fill: none; marker-end: url(#arrow-gray); stroke-dasharray: 8 7; stroke-linecap: round; }
+      .mirror { stroke: #334155; stroke-width: 4; stroke-linecap: round; }
+      .axis { stroke: #94a3b8; stroke-width: 1.6; stroke-dasharray: 6 6; }
+      .title { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; font-size: 30px; fill: #0f172a; font-weight: 700; }
+      .subtitle { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; font-size: 18px; fill: #334155; }
+      .label { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; font-size: 20px; fill: #0f172a; font-weight: 700; }
+      .small { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; font-size: 16px; fill: #334155; }
+      .tiny { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; font-size: 14px; fill: #475569; }
+      .tag { font-family: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", Arial, sans-serif; font-size: 15px; fill: #0f172a; font-weight: 700; }
+      .mono { font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace; font-size: 13px; fill: #475569; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1500" height="860"/>
+  <text class="title" x="42" y="54">硅基 Dirac-vortex 腔光学测试主光路</text>
+  <text class="subtitle" x="42" y="86">交叉偏振反射用于压低同偏振背景；同一返回光路可切换到光谱扫描、近场成像、后焦面远场和偏振分辨成像。</text>
+  <text class="subtitle" x="42" y="112">蓝色箭头表示入射泵浦光，绿色箭头表示样品返回的交叉偏振信号。</text>
+
+  <rect class="panel" x="30" y="140" width="1440" height="320"/>
+  <text class="tag" x="54" y="170">A. 入射与样品反射路径</text>
+
+  <rect class="source" x="60" y="235" width="150" height="82"/>
+  <text class="label" x="94" y="269">可调谐</text>
+  <text class="label" x="104" y="296">激光器</text>
+  <text class="mono" x="90" y="331">scan / hold</text>
+
+  <rect class="optic" x="252" y="235" width="150" height="82"/>
+  <text class="label" x="287" y="269">准直器</text>
+  <text class="tiny" x="279" y="297">fiber collimator</text>
+
+  <rect class="optic" x="444" y="235" width="150" height="82"/>
+  <text class="label" x="480" y="269">衰减器</text>
+  <text class="tiny" x="477" y="297">ND / VOA</text>
+
+  <rect class="polar" x="636" y="235" width="174" height="82"/>
+  <text class="label" x="671" y="269">偏振控制</text>
+  <text class="tiny" x="667" y="297">PC / HWP / polarizer</text>
+
+  <rect class="polar" x="866" y="214" width="128" height="124"/>
+  <text class="label" x="908" y="260">PBS</text>
+  <text class="tiny" x="895" y="288">泵浦偏振入射</text>
+  <text class="tiny" x="888" y="312">交叉偏振出射</text>
+  <line class="axis" x1="884" y1="322" x2="978" y2="228"/>
+
+  <line class="mirror" x1="1068" y1="324" x2="1148" y2="244"/>
+  <text class="label" x="1080" y="226">反射镜</text>
+
+  <ellipse class="lens" cx="1275" cy="276" rx="22" ry="68"/>
+  <text class="label" x="1236" y="189">显微物镜</text>
+  <text class="tiny" x="1226" y="213">10X 或高 NA，IR 镀膜</text>
+
+  <rect class="sample" x="1200" y="382" width="150" height="60"/>
+  <rect class="chip" x="1224" y="402" width="102" height="18"/>
+  <circle class="cavity" cx="1275" cy="411" r="7"/>
+  <text class="label" x="1212" y="374">SOI 样品</text>
+  <text class="tiny" x="1199" y="452">Dirac-vortex cavity 位于物镜焦点</text>
+
+  <path class="pump" d="M 210 276 L 252 276"/>
+  <path class="pump" d="M 402 276 L 444 276"/>
+  <path class="pump" d="M 594 276 L 636 276"/>
+  <path class="pump" d="M 810 276 L 866 276"/>
+  <path class="pump" d="M 994 276 L 1068 276"/>
+  <path class="pump" d="M 1148 276 L 1253 276"/>
+  <path class="pump" d="M 1275 344 L 1275 382"/>
+
+  <path class="signal" d="M 1244 382 L 1244 344"/>
+  <path class="signal" d="M 1253 298 L 1148 310"/>
+  <path class="signal" d="M 1068 310 L 994 310"/>
+  <path class="signal" d="M 930 338 L 930 492"/>
+
+  <text class="tiny" x="82" y="201">蓝色：入射泵浦光</text>
+  <line x1="220" y1="196" x2="304" y2="196" stroke="#2563eb" stroke-width="5" marker-end="url(#arrow-pump)"/>
+  <text class="tiny" x="348" y="201">绿色：样品返回的交叉偏振信号</text>
+  <line x1="574" y1="196" x2="658" y2="196" stroke="#0f766e" stroke-width="5" marker-end="url(#arrow-signal)"/>
+
+  <rect class="panel" x="30" y="486" width="1000" height="314"/>
+  <text class="tag" x="54" y="516">B. 返回信号探测路径</text>
+
+  <rect class="optic" x="854" y="544" width="152" height="92"/>
+  <text class="label" x="894" y="582">翻转镜</text>
+  <text class="tiny" x="879" y="609">光谱 / 成像切换</text>
+
+  <rect class="detector" x="592" y="536" width="192" height="100"/>
+  <text class="label" x="637" y="572">功率计 /</text>
+  <text class="label" x="628" y="600">光电探测器</text>
+  <text class="tiny" x="618" y="626">扫波长：反射谱、Q、FSR</text>
+
+  <rect class="optic" x="590" y="682" width="194" height="84"/>
+  <text class="label" x="634" y="716">成像透镜组</text>
+  <text class="tiny" x="616" y="742">tube lens / 4f / BFP</text>
+
+  <rect class="polar" x="348" y="682" width="168" height="84"/>
+  <text class="label" x="389" y="716">分析偏振片</text>
+  <text class="tiny" x="379" y="742">0 / 45 / 90 / 135 deg</text>
+
+  <rect class="camera" x="90" y="672" width="190" height="104"/>
+  <text class="label" x="135" y="711">InGaAs 相机</text>
+  <text class="tiny" x="118" y="739">near-field / far-field</text>
+  <text class="tiny" x="126" y="762">固定在共振波长</text>
+
+  <path class="signal" d="M 930 492 L 930 544"/>
+  <path class="signal" d="M 854 584 L 784 584"/>
+  <path class="signal" d="M 854 616 C 812 660 804 700 784 724"/>
+  <path class="signal" d="M 590 724 L 516 724"/>
+  <path class="signal" d="M 348 724 L 280 724"/>
+
+  <rect class="note" x="1064" y="486" width="406" height="314"/>
+  <text class="tag" x="1088" y="518">调试顺序与记录项</text>
+  <text class="small" x="1088" y="552">1. 功率计通道粗扫，找到共振峰/谷。</text>
+  <text class="small" x="1088" y="584">2. 无腔区域调低交叉偏振背景。</text>
+  <text class="small" x="1088" y="616">3. 固定在 λ0 后切到相机通道。</text>
+  <text class="small" x="1088" y="648">4. 样品面看 core 局域性，后焦面看 far-field。</text>
+  <text class="small" x="1088" y="680">5. 分析偏振片采 0 / 45 / 90 / 135 deg。</text>
+  <text class="small" x="1088" y="712">6. 同步记录功率、步进、NA、曝光和背景。</text>
+  <text class="small" x="1088" y="744">7. 输出反射谱、Q、FSR、近场和远场图。</text>
+  <text class="small" x="1088" y="776">8. 每组图保留暗场、离共振和无腔对照。</text>
+
+  <path class="route" d="M 280 724 C 318 804 524 822 740 800"/>
+  <text class="tiny" x="740" y="820">成像通道根据透镜位置切换：样品面 near-field 或物镜后焦面 far-field</text>
+</svg>

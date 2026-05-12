@@ -1,0 +1,6 @@
+
+The TB calculation is generally used to determine the interface states of HOTIs in the two-dimensional (2D) Su–Schrieffer–Heeger (SSH) model, under the assumption of a discrete lattice structure with on-site atomic elements15,33,34
+
+在二维 Su-Schrieffer-Heeger (SSH)模型中，紧束缚(TB)计算通常用于确定高阶拓扑绝缘体(HOTI)的界面态，其假设是具有离散晶格结构且原子元素 [15](https://www.nature.com/articles/s41566-023-01338-2#ref-CR15 "Kim, H.-R. et al. Multipolar lasing modes from topological corner states. Nat. Commun. 11, 5758 (2020)."),[33](https://www.nature.com/articles/s41566-023-01338-2#ref-CR33 "Xie, B.-Y. et al. Visualization of higher-order topological insulating phases in two-dimensional dielectric photonic crystals. Phys. Rev. Lett. 122, 233903 (2019)."),[34](https://www.nature.com/articles/s41566-023-01338-2#ref-CR34 "He, L., Addison, Z., Mele, E. J. & Zhen, B. Quadrupole topological photonic crystals. Nat. Commun. 11, 3119 (2020).") 占据特定位置。
+Project: [[Vortex nanolaser based on a photonic disclination cavity - MOC|Vortex Nanolaser]]
+Theory: [[二维SSH模型|2D_SSH模型]]

@@ -1,0 +1,8 @@
+{
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "presentation_workspace/",
+    "presentation_one_on_one_assistant/",
+    "presentation_workspace_qa/"
+  ]
+}

@@ -1,0 +1,9 @@
+原始资料_PDF_不上传/
+子仓库_git备份_不上传/
+raw/
+.DS_Store
+.~*
+~$*
+
+# 大型仿真/版图输出文件，不适合直接放入 GitHub
+codex_job/code/Project_Replication_Vortex/output/
