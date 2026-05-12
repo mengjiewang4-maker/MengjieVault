@@ -4,79 +4,39 @@
     "type": "split",
     "children": [
       {
-        "id": "612f2cb461171563",
-        "type": "split",
+        "id": "533493e0a27ec070",
+        "type": "tabs",
         "children": [
           {
-            "id": "533493e0a27ec070",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "ec5559f5e79be467",
-                "type": "leaf",
-                "state": {
-                  "type": "markdown",
-                  "state": {
-                    "file": "演示/演示/量子激光雷达/01.md",
-                    "mode": "source",
-                    "source": false
-                  },
-                  "icon": "lucide-file",
-                  "title": "01"
-                }
-              }
-            ]
+            "id": "ec5559f5e79be467",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/04_角动量与多极展开.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "04_角动量与多极展开"
+            }
           },
           {
-            "id": "23cb2498b8f871a8",
-            "type": "tabs",
-            "children": [
-              {
-                "id": "4e077bc012cf75ab",
-                "type": "leaf",
-                "pinned": true,
-                "state": {
-                  "type": "terminal:terminal",
-                  "state": {
-                    "terminal:terminal": {
-                      "cwd": "/Users/mac/Documents/mengjie/MengjieVault",
-                      "focus": false,
-                      "profile": {
-                        "args": [
-                          "--login"
-                        ],
-                        "executable": "/bin/zsh",
-                        "followTheme": true,
-                        "name": "",
-                        "platforms": {
-                          "darwin": true
-                        },
-                        "pythonExecutable": "python3",
-                        "restoreHistory": false,
-                        "rightClickAction": "copyPaste",
-                        "successExitCodes": [
-                          "0",
-                          "SIGINT",
-                          "SIGTERM"
-                        ],
-                        "terminalOptions": {
-                          "documentOverride": null
-                        },
-                        "type": "integrated",
-                        "useWin32Conhost": true
-                      },
-                      "serial": null
-                    }
-                  },
-                  "pinned": true,
-                  "icon": "terminal",
-                  "title": "终端：[ . ] Action Required | MengjieVault"
-                }
-              }
-            ]
+            "id": "8d0ac1adf81eb16b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "精读文献/Dirac-vortex topological cavities 精读笔记.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Dirac-vortex topological cavities 精读笔记"
+            }
           }
         ],
-        "direction": "horizontal"
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -144,6 +104,48 @@
         "type": "tabs",
         "children": [
           {
+            "id": "e10d87bd4f84322f",
+            "type": "leaf",
+            "pinned": true,
+            "state": {
+              "type": "terminal:terminal",
+              "state": {
+                "terminal:terminal": {
+                  "cwd": "/Users/mac/Documents/mengjie/MengjieVault/精读文献",
+                  "focus": false,
+                  "profile": {
+                    "args": [
+                      "--login"
+                    ],
+                    "executable": "/bin/zsh",
+                    "followTheme": true,
+                    "name": "",
+                    "platforms": {
+                      "darwin": true
+                    },
+                    "pythonExecutable": "python3",
+                    "restoreHistory": false,
+                    "rightClickAction": "copyPaste",
+                    "successExitCodes": [
+                      "0",
+                      "SIGINT",
+                      "SIGTERM"
+                    ],
+                    "terminalOptions": {
+                      "documentOverride": null
+                    },
+                    "type": "integrated",
+                    "useWin32Conhost": true
+                  },
+                  "serial": null
+                }
+              },
+              "pinned": true,
+              "icon": "terminal",
+              "title": "终端：MengjieVault"
+            }
+          },
+          {
             "id": "99ea788db566aca3",
             "type": "leaf",
             "state": {
@@ -210,20 +212,19 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "ResearchVaultshare/分享/用 Codex 和 Obsidian 构建交互式量子力学学习助手 v2.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "用 Codex 和 Obsidian 构建交互式量子力学学习助手 v2 的大纲"
+              "title": "大纲"
             }
           }
         ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 416.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -238,44 +239,43 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "4e077bc012cf75ab",
+  "active": "e10d87bd4f84322f",
   "lastOpenFiles": [
+    "精读文献/Dirac-vortex topological cavities 精读笔记.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/04_角动量与多极展开.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/03_高阶拓扑与旋错缺陷态.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/02_photonic_disclination_cavity.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/01_本文研究问题.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/00_原子笔记索引.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/01_本文研究问题.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/00_原子笔记索引.md",
+    "原始资料_PDF_不上传/papers/02_on_chip_lasers/SI_Vortex nanolaser based on a photonic disclination cavity.pdf",
+    "原始资料_PDF_不上传/papers/02_on_chip_lasers/Vortex nanolaser based on a photonic.pdf",
+    "原始资料_PDF_不上传/papers/02_on_chip_lasers/Vortex nanolaser based on a photonic disclination cavity.pdf",
+    "原始资料_PDF_不上传/papers/Vortex nanolaser based on a photonic disclination cavity.pdf",
+    "原始资料_PDF_不上传/Vortex nanolaser based on a photonic disclination cavity.pdf",
+    "Vortex nanolaser based on a photonic disclination cavity.pdf",
+    "精读文献/Vortex nanolaser based on a photonic disclination cavity 精读笔记.md",
+    "精读文献/Dirac-vortex topological cavities 论文汇报稿.md",
+    "精读文献/Vortex nanolaser based on a photonic disclination cavity 论文汇报稿.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/07_与Dirac-vortex_cavity对比.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/06_自干涉如何证明OAM.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/05_Stokes参数与偏振涡旋.md",
+    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/10_SI证据链.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/09_衬底兼容性与PCSEL前景.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/08_SOI实验验证.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/07_手征对称性为什么重要.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/06_FSR异常尺度律.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/05_四个设计参数_w_m0_R_alpha.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/04_Kekule调制如何实现复数Dirac质量.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/03_Dirac质量涡旋与Jackiw-Rossi零模.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities/02_1D相移腔的拓扑中隙模.md",
+    "精读文献/原子笔记_Dirac-vortex topological cavities",
     "演示/演示/量子激光雷达/01.md",
     "子仓库_git备份_不上传/codex_job",
     "子仓库_git备份_不上传/ResearchVaultshare",
-    "子仓库_git备份_不上传/ResearchVault",
-    "子仓库_git备份_不上传/Photonics",
-    "子仓库_git备份_不上传",
-    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex/激光原理及应用(第四版) (陈家璧) (Z-Library).pdf",
-    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex/激光原理 (周炳琨, 高以智, 陈倜嵘, 陈家骅, 霍力编) (Z-Library).pdf",
-    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex/激光光学光束描述、传输变换与光腔技术物理 (吕百达) (Z-Library).pdf",
-    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex/涡旋光束 (高春清 付时尧) (Z-Library).pdf",
-    "原始资料_PDF_不上传/codex_job/obsidian/raw/books/02_lasers_beams_vortex",
     "codex_job/obsidian/raw/transcripts/README.md",
-    "随手记/git 流程.md",
-    "codex_job/obsidian/raw/papers/10_projects_proposals/王梦杰-2025-2025年国自然青年学生基础研究项目（博士研究生）+王梦杰+F0403.md",
-    "codex_job/obsidian/raw/papers/09_textbooks_reference/谢处方-电磁场与电磁波习题答案（第4版） (Z-Library)-unknown-谢处方-电磁场与电磁波习题答案（第4版） (Z-Library).md",
-    "codex_job/obsidian/raw/papers/08_condensed_matter_theory/Fractionalization in a square-lattice model with time-reversal symmetry-2007-Fractionalization in a square-lattice model with time-reversal symmetry.md",
-    "codex_job/obsidian/raw/papers/08_condensed_matter_theory/THE FLUX PHASE OF THE HALF-FILLED BAND-1994-THE FLUX PHASE OF THE HALF-FILLED BAND.md",
-    "codex_job/obsidian/raw/papers/08_condensed_matter_theory/zero modes of the vortex-fermion system-1981-zero modes of the vortex-fermion system.md",
-    "codex_job/obsidian/raw/papers/07_frequency_combs_microrings/Zhang-unknown-Broadband electro-optic frequency comb generation in a lithium niobate microring.md",
-    "codex_job/obsidian/raw/papers/06_nonlinear_ultrafast_lasers/王羡之-2021-非线性光学效应在飞秒超强激...比度及光强提升中的应用研究_王羡之.md",
-    "codex_job/obsidian/raw/papers/05_quantum_radar_computing/量子计算文档-unknown-量子计算文档.md",
-    "codex_job/obsidian/raw/papers/05_quantum_radar_computing/量子激光雷达研究综述（特邀）_红外与激光工程-2021-量子激光雷达研究综述（特邀）_红外与激光工程.md",
-    "codex_job/obsidian/raw/papers/05_quantum_radar_computing/量子雷达及其研究进展-unknown-量子雷达及其研究进展.md",
-    "codex_job/obsidian/raw/papers/04_metasurfaces_polarization/Zao-2010-Polarization cross coupling in asymmetric photonic waveguides.md",
-    "codex_job/obsidian/raw/papers/04_metasurfaces_polarization/Lin-2025-Chiral Metasurfaces with Multidimensional Tunability for Optical Chiral States.md",
-    "codex_job/obsidian/raw/papers/04_metasurfaces_polarization/超表面硅光偏振分束器制备及测试.md",
-    "codex_job/obsidian/raw/papers/03_topological_photonics/Song-2025-Nonlocality-enabled photonic analogies of parallel spaces, wormholes and multiple realitie.md",
-    "codex_job/obsidian/raw/papers/03_topological_photonics/拓扑光子学研究进展-2019-拓扑光子学研究进展.md",
-    "codex_job/obsidian/raw/papers/03_topological_photonics/胡梦莹-2021-光子晶体中拓扑半金属与拓扑界面态的研究(胡梦莹2021)_202412121807138397.md",
-    "codex_job/obsidian/raw/papers/03_topological_photonics/Mao-2025-A single-photon source based on topological bulk cavity.md",
-    "codex_job/obsidian/raw/papers/03_topological_photonics/Yang-unknown-Topological-cavity surface-emitting laser.md",
-    "codex_job/obsidian/raw/papers/03_topological_photonics/Dirac-vortex topological cavities.md",
-    "codex_job/obsidian/raw/papers/02_on_chip_lasers/王羡之-2018-全固态皮秒Nd_YVO_4激光器工程化研究_王羡之.md",
-    "codex_job/obsidian/raw/papers/02_on_chip_lasers/Javan-1961-Population Inversion and Continuous Optical Maser Oscillation in a Gas Discharge.md",
-    "codex_job/obsidian/raw/papers/02_on_chip_lasers/Coherent two-dimensional lasing action in surface-emitting laser withtriangular-lattice photonic crystal structure-1999-Coherent two-dimensional lasing action i.md",
-    "codex_job/obsidian/raw/papers/02_on_chip_lasers/Yang-2021-Single-Mode Semiconductor Nanowire Lasers With Coupled Cavities.md",
     "codex_job/obsidian/outputs/reports/assets/硅基狄拉克涡旋腔交叉偏振反射光路.svg",
     "ResearchVault/results/plots/quantum_models_overview.png",
     "ResearchVault/results/plots/molecular_effective_potential.png",
