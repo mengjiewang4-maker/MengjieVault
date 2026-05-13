@@ -4,39 +4,147 @@
     "type": "split",
     "children": [
       {
-        "id": "533493e0a27ec070",
-        "type": "tabs",
+        "id": "26295f2abc7789e9",
+        "type": "split",
         "children": [
           {
-            "id": "ec5559f5e79be467",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/04_角动量与多极展开.md",
-                "mode": "source",
-                "source": false
+            "id": "533493e0a27ec070",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "8d0ac1adf81eb16b",
+                "type": "leaf",
+                "state": {
+                  "type": "image",
+                  "state": {
+                    "file": "codex_job/code/Project_Replication_Vortex/微信图片_20260413084856_3531_157.jpg"
+                  },
+                  "icon": "lucide-image",
+                  "title": "微信图片_20260413084856_3531_157"
+                }
               },
-              "icon": "lucide-file",
-              "title": "04_角动量与多极展开"
-            }
+              {
+                "id": "201a34e138e76790",
+                "type": "leaf",
+                "state": {
+                  "type": "vscode-editor",
+                  "state": {
+                    "file": "codex_job/code/Project_Replication_Vortex/disclination_vortex_gds.py"
+                  },
+                  "icon": "lucide-file",
+                  "title": "disclination_vortex_gds"
+                }
+              },
+              {
+                "id": "bc4e0fbe5c02f33d",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "codex_job/code/Project_Replication_Vortex/README.md",
+                    "mode": "source",
+                    "source": false
+                  },
+                  "icon": "lucide-file",
+                  "title": "README"
+                }
+              }
+            ],
+            "currentTab": 2
           },
           {
-            "id": "8d0ac1adf81eb16b",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "精读文献/Dirac-vortex topological cavities 精读笔记.md",
-                "mode": "source",
-                "source": false
+            "id": "673d83f14bec1c1e",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "9303e2c4f78003db",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "terminal:terminal",
+                  "state": {
+                    "terminal:terminal": {
+                      "cwd": "/Users/mac/Documents/mengjie/MengjieVault/codex_job",
+                      "focus": false,
+                      "profile": {
+                        "args": [
+                          "--login"
+                        ],
+                        "executable": "/bin/zsh",
+                        "followTheme": true,
+                        "name": "",
+                        "platforms": {
+                          "darwin": true
+                        },
+                        "pythonExecutable": "python3",
+                        "restoreHistory": false,
+                        "rightClickAction": "copyPaste",
+                        "successExitCodes": [
+                          "0",
+                          "SIGINT",
+                          "SIGTERM"
+                        ],
+                        "terminalOptions": {
+                          "documentOverride": null
+                        },
+                        "type": "integrated",
+                        "useWin32Conhost": true
+                      },
+                      "serial": null
+                    }
+                  },
+                  "pinned": true,
+                  "icon": "terminal",
+                  "title": "终端：MengjieVault"
+                }
               },
-              "icon": "lucide-file",
-              "title": "Dirac-vortex topological cavities 精读笔记"
-            }
+              {
+                "id": "d2807e4b3b0450a1",
+                "type": "leaf",
+                "pinned": true,
+                "state": {
+                  "type": "terminal:terminal",
+                  "state": {
+                    "terminal:terminal": {
+                      "cwd": "/Users/mac/Documents/mengjie/MengjieVault",
+                      "focus": false,
+                      "profile": {
+                        "args": [
+                          "--login"
+                        ],
+                        "executable": "/bin/zsh",
+                        "followTheme": true,
+                        "name": "",
+                        "platforms": {
+                          "darwin": true
+                        },
+                        "pythonExecutable": "python3",
+                        "restoreHistory": false,
+                        "rightClickAction": "copyPaste",
+                        "successExitCodes": [
+                          "0",
+                          "SIGINT",
+                          "SIGTERM"
+                        ],
+                        "terminalOptions": {
+                          "documentOverride": null
+                        },
+                        "type": "integrated",
+                        "useWin32Conhost": true
+                      },
+                      "serial": null
+                    }
+                  },
+                  "pinned": true,
+                  "icon": "terminal",
+                  "title": "终端：[ . ] Action Required | MengjieVault"
+                }
+              }
+            ],
+            "currentTab": 1
           }
         ],
-        "currentTab": 1
+        "direction": "horizontal"
       }
     ],
     "direction": "vertical"
@@ -103,48 +211,6 @@
         "id": "0b04a255130b08ef",
         "type": "tabs",
         "children": [
-          {
-            "id": "e10d87bd4f84322f",
-            "type": "leaf",
-            "pinned": true,
-            "state": {
-              "type": "terminal:terminal",
-              "state": {
-                "terminal:terminal": {
-                  "cwd": "/Users/mac/Documents/mengjie/MengjieVault/精读文献",
-                  "focus": false,
-                  "profile": {
-                    "args": [
-                      "--login"
-                    ],
-                    "executable": "/bin/zsh",
-                    "followTheme": true,
-                    "name": "",
-                    "platforms": {
-                      "darwin": true
-                    },
-                    "pythonExecutable": "python3",
-                    "restoreHistory": false,
-                    "rightClickAction": "copyPaste",
-                    "successExitCodes": [
-                      "0",
-                      "SIGINT",
-                      "SIGTERM"
-                    ],
-                    "terminalOptions": {
-                      "documentOverride": null
-                    },
-                    "type": "integrated",
-                    "useWin32Conhost": true
-                  },
-                  "serial": null
-                }
-              },
-              "pinned": true,
-              "icon": "terminal",
-              "title": "终端：MengjieVault"
-            }
-          },
           {
             "id": "99ea788db566aca3",
             "type": "leaf",
@@ -220,11 +286,12 @@
               "title": "大纲"
             }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 416.5
+    "width": 432.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -239,10 +306,22 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "e10d87bd4f84322f",
+  "active": "d2807e4b3b0450a1",
   "lastOpenFiles": [
-    "精读文献/Dirac-vortex topological cavities 精读笔记.md",
+    "codex_job/code/Project_Replication_Vortex/README.md",
+    "codex_job/code/Project_Replication_Vortex/disclination_vortex_gds.py",
+    "codex_job/code/Project_Replication_Vortex/微信图片_20260413084856_3531_157.jpg",
     "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/04_角动量与多极展开.md",
+    "codex_job/code/Project_Replication_Vortex/微信图片_20260413085002_3533_157.png",
+    "codex_job/code/Project_Replication_Vortex/微信图片_20260413084923_3532_157.jpg",
+    "skill/交互式学习仓库/SKILL.md",
+    "skill/obsidian-cli/SKILL.md",
+    "skill/obsidian-markdown/SKILL.md",
+    "skill/AGENTS.md",
+    "Photonics/Dirac-vortex 理论知识.md",
+    "Photonics/光学测试实验计划 1 1.md",
+    "原始资料_PDF_不上传/s41467-024-48788-y.pdf",
+    "精读文献/Dirac-vortex topological cavities 精读笔记.md",
     "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/03_高阶拓扑与旋错缺陷态.md",
     "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/02_photonic_disclination_cavity.md",
     "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/01_本文研究问题.md",
@@ -266,25 +345,13 @@
     "精读文献/原子笔记_Dirac-vortex topological cavities/09_衬底兼容性与PCSEL前景.md",
     "精读文献/原子笔记_Dirac-vortex topological cavities/08_SOI实验验证.md",
     "精读文献/原子笔记_Dirac-vortex topological cavities/07_手征对称性为什么重要.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/06_FSR异常尺度律.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/05_四个设计参数_w_m0_R_alpha.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/04_Kekule调制如何实现复数Dirac质量.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/03_Dirac质量涡旋与Jackiw-Rossi零模.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/02_1D相移腔的拓扑中隙模.md",
     "精读文献/原子笔记_Dirac-vortex topological cavities",
-    "演示/演示/量子激光雷达/01.md",
-    "子仓库_git备份_不上传/codex_job",
-    "子仓库_git备份_不上传/ResearchVaultshare",
-    "codex_job/obsidian/raw/transcripts/README.md",
     "codex_job/obsidian/outputs/reports/assets/硅基狄拉克涡旋腔交叉偏振反射光路.svg",
     "ResearchVault/results/plots/quantum_models_overview.png",
     "ResearchVault/results/plots/molecular_effective_potential.png",
     "ResearchVault/results/plots/infinite_well_levels.png",
     "ResearchVault/results/plots/identical_particle_exchange.png",
     "ResearchVault/results/plots/hydrogen_radial_probabilities.png",
-    "ResearchVault/results/plots/harmonic_oscillator_states.png",
-    "ResearchVault/results/plots/harmonic_oscillator_matrices.png",
-    "ResearchVault/results/plots/free_gaussian_packet_spreading.png",
-    "ResearchVault/results/plots/fermi_occupation.png"
+    "ResearchVault/results/plots/harmonic_oscillator_states.png"
   ]
 }
