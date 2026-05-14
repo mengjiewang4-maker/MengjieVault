@@ -182,18 +182,20 @@ site_disclination_halfR = generate_disclination_sites(R_half)
 date_str = datetime.now().strftime("%Y%m%d")
 OUTPUT_DIR.mkdir(exist_ok=True)
 
-for params in PARAM_SETS:
+for index, params in enumerate(PARAM_SETS, start=1):
     a = params["a"]
     r_hole = params["r_ratio"] * a
     a_token = format_param_token(a)
     r_token = format_param_token(r_hole)
     label_text = f"a{a_token}_r{r_token}"
+    full_seq = (index - 1) * 2 + 1
+    half_seq = full_seq + 1
 
-    filename = OUTPUT_DIR / f"wmj{date_str}disc_R{R}_a{a_token}_r{r_token}.gds"
-    half_filename = OUTPUT_DIR / f"wmj{date_str}disc_R{R_half}_a{a_token}_r{r_token}.gds"
+    filename = OUTPUT_DIR / f"mj{date_str}_{full_seq:02d}.gds"
+    half_filename = OUTPUT_DIR / f"mj{date_str}_{half_seq:02d}.gds"
 
     write_gds(filename, R, site_disclination, a, r_hole, label_text)
     write_gds(half_filename, R_half, site_disclination_halfR, a, r_hole, label_text)
 
-    print(f"完成！文件已保存为: {filename}")
-    print(f"完成！半径减半文件已保存为: {half_filename}")
+    print(f"完成！文件已保存为: {filename}，参数: R={R}, a={a}, r_ratio={params['r_ratio']}, r_hole={r_hole}")
+    print(f"完成！半径减半文件已保存为: {half_filename}，参数: R={R_half}, a={a}, r_ratio={params['r_ratio']}, r_hole={r_hole}")

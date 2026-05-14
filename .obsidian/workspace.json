@@ -4,67 +4,53 @@
     "type": "split",
     "children": [
       {
-        "id": "26295f2abc7789e9",
+        "id": "33bc2f2fbcab8bae",
         "type": "split",
         "children": [
           {
-            "id": "533493e0a27ec070",
+            "id": "8cc18af0bc37f2cb",
             "type": "tabs",
             "children": [
               {
-                "id": "8d0ac1adf81eb16b",
-                "type": "leaf",
-                "state": {
-                  "type": "image",
-                  "state": {
-                    "file": "codex_job/code/Project_Replication_Vortex/微信图片_20260413084856_3531_157.jpg"
-                  },
-                  "icon": "lucide-image",
-                  "title": "微信图片_20260413084856_3531_157"
-                }
-              },
-              {
-                "id": "201a34e138e76790",
-                "type": "leaf",
-                "state": {
-                  "type": "vscode-editor",
-                  "state": {
-                    "file": "codex_job/code/Project_Replication_Vortex/disclination_vortex_gds.py"
-                  },
-                  "icon": "lucide-file",
-                  "title": "disclination_vortex_gds"
-                }
-              },
-              {
-                "id": "bc4e0fbe5c02f33d",
+                "id": "8379cf994a1ac78f",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "codex_job/code/Project_Replication_Vortex/README.md",
+                    "file": "Topological_Photonics/01.md",
                     "mode": "source",
                     "source": false
                   },
                   "icon": "lucide-file",
-                  "title": "README"
+                  "title": "01"
+                }
+              },
+              {
+                "id": "0df3c6123c5ba980",
+                "type": "leaf",
+                "state": {
+                  "type": "empty",
+                  "state": {},
+                  "icon": "lucide-file",
+                  "title": "新标签页"
                 }
               }
             ],
-            "currentTab": 2
+            "currentTab": 1
           },
           {
-            "id": "673d83f14bec1c1e",
+            "id": "0292fd2dee7f5824",
             "type": "tabs",
             "children": [
               {
-                "id": "9303e2c4f78003db",
+                "id": "5898776851e598bb",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
                   "type": "terminal:terminal",
                   "state": {
                     "terminal:terminal": {
-                      "cwd": "/Users/mac/Documents/mengjie/MengjieVault/codex_job",
+                      "cwd": "/Users/mac/Documents/mengjie/MengjieVault/Topological_Photonics",
                       "focus": false,
                       "profile": {
                         "args": [
@@ -99,7 +85,7 @@
                 }
               },
               {
-                "id": "d2807e4b3b0450a1",
+                "id": "55161c22fa352776",
                 "type": "leaf",
                 "pinned": true,
                 "state": {
@@ -137,7 +123,7 @@
                   },
                   "pinned": true,
                   "icon": "terminal",
-                  "title": "终端：[ . ] Action Required | MengjieVault"
+                  "title": "终端：[ ! ] Action Required | MengjieVault"
                 }
               }
             ],
@@ -306,46 +292,47 @@
       "vscode-editor:新建代码文件": false
     }
   },
-  "active": "d2807e4b3b0450a1",
+  "active": "55161c22fa352776",
   "lastOpenFiles": [
-    "codex_job/code/Project_Replication_Vortex/README.md",
-    "codex_job/code/Project_Replication_Vortex/disclination_vortex_gds.py",
+    "Topological_Photonics/微腔加工与光学测试/02-微腔加工/SOP/Disclination-vortex加工路线总结.md",
+    "Topological_Photonics/微腔加工与光学测试/02-微腔加工/00-加工总流程/Disclination-vortex加工路线总结.md",
+    "Topological_Photonics/微腔加工与光学测试/02-微腔加工/00-加工总流程",
+    "Topological_Photonics/微腔加工与光学测试/03-光学测试/01-测试平台搭建/Dirac-vortex光学测试判据总结.md",
+    "Topological_Photonics/微腔加工与光学测试/01-项目总览/资料引用与迁移策略.md",
+    "Topological_Photonics/01.md",
+    "Topological_Photonics/02.md",
+    "Topological_Photonics/微腔加工与光学测试/02-微腔加工/01-样品设计/Disclination当前加工入口.md",
+    "Topological_Photonics/微腔加工与光学测试/03-光学测试/10-测试数据/Dirac-vortex已加工样品光学测试入口.md",
+    "Topological_Photonics/微腔加工与光学测试/02-微腔加工/01-样品设计/Dirac-vortex已加工样品索引.md",
+    "Topological_Photonics/Dirac-vortex 理论知识.md",
+    "Topological_Photonics/00-索引.md",
+    "Topological_Photonics/微腔加工与光学测试/02-微腔加工/02-版图设计/GDS-mj20260420-版图索引.md",
+    "Topological_Photonics/微腔加工与光学测试/02-微腔加工/01-样品设计/MC-20260514-01-样品与器件索引.md",
+    "Topological_Photonics/微腔加工与光学测试/01-项目总览/当前研究主线整理.md",
+    "Topological_Photonics/微腔加工与光学测试/01-项目总览/00-项目索引.md",
+    "Topological_Photonics/微腔加工与光学测试/06-论文与汇报/论文模仿路线与图表复现清单.md",
+    "Topological_Photonics/微腔加工与光学测试/05-数据分析/光谱分析/Q与FSR数据处理入口.md",
+    "Topological_Photonics/微腔加工与光学测试/03-光学测试/10-测试数据/MC-20260514-01-光学测试入口.md",
+    "Topological_Photonics/微腔加工与光学测试/02-微腔加工/10-工艺参数数据库/MC-20260514-01-工艺参数卡.md",
+    "Topological_Photonics/微腔加工与光学测试/01-项目总览/现有笔记整理索引.md",
+    "Topological_Photonics/微腔加工与光学测试库结构说明.md",
+    "Topological_Photonics/微腔加工与光学测试/templates/数据分析记录模板.md",
+    "Topological_Photonics/微腔加工与光学测试/templates/问题排查模板.md",
+    "Topological_Photonics/微腔加工与光学测试/templates/光学测试记录模板.md",
+    "Topological_Photonics/微腔加工与光学测试/templates/加工步骤记录模板.md",
+    "Topological_Photonics/微腔加工与光学测试/templates/器件记录模板.md",
+    "Topological_Photonics/微腔加工与光学测试/06-论文与汇报/论文写作素材",
+    "Topological_Photonics/微腔加工与光学测试/06-论文与汇报/组会汇报",
+    "Topological_Photonics/微腔加工与光学测试/06-论文与汇报/图表素材",
+    "Topological_Photonics/微腔加工与光学测试/06-论文与汇报/周报记录",
+    "Topological_Photonics/微腔加工与光学测试/05-数据分析/远场分析",
+    "Topological_Photonics/微腔加工与光学测试/05-数据分析/干涉图分析",
+    "Topological_Photonics/微腔加工与光学测试/05-数据分析/光谱分析",
+    "Topological_Photonics/微腔加工与光学测试/05-数据分析/偏振分析",
+    "Topological_Photonics/微腔加工与光学测试/05-数据分析/Python脚本记录",
     "codex_job/code/Project_Replication_Vortex/微信图片_20260413084856_3531_157.jpg",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/04_角动量与多极展开.md",
     "codex_job/code/Project_Replication_Vortex/微信图片_20260413085002_3533_157.png",
     "codex_job/code/Project_Replication_Vortex/微信图片_20260413084923_3532_157.jpg",
-    "skill/交互式学习仓库/SKILL.md",
-    "skill/obsidian-cli/SKILL.md",
-    "skill/obsidian-markdown/SKILL.md",
-    "skill/AGENTS.md",
-    "Photonics/Dirac-vortex 理论知识.md",
-    "Photonics/光学测试实验计划 1 1.md",
-    "原始资料_PDF_不上传/s41467-024-48788-y.pdf",
-    "精读文献/Dirac-vortex topological cavities 精读笔记.md",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/03_高阶拓扑与旋错缺陷态.md",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/02_photonic_disclination_cavity.md",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/01_本文研究问题.md",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/00_原子笔记索引.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/01_本文研究问题.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/00_原子笔记索引.md",
-    "原始资料_PDF_不上传/papers/02_on_chip_lasers/SI_Vortex nanolaser based on a photonic disclination cavity.pdf",
-    "原始资料_PDF_不上传/papers/02_on_chip_lasers/Vortex nanolaser based on a photonic.pdf",
-    "原始资料_PDF_不上传/papers/02_on_chip_lasers/Vortex nanolaser based on a photonic disclination cavity.pdf",
-    "原始资料_PDF_不上传/papers/Vortex nanolaser based on a photonic disclination cavity.pdf",
-    "原始资料_PDF_不上传/Vortex nanolaser based on a photonic disclination cavity.pdf",
-    "Vortex nanolaser based on a photonic disclination cavity.pdf",
-    "精读文献/Vortex nanolaser based on a photonic disclination cavity 精读笔记.md",
-    "精读文献/Dirac-vortex topological cavities 论文汇报稿.md",
-    "精读文献/Vortex nanolaser based on a photonic disclination cavity 论文汇报稿.md",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/07_与Dirac-vortex_cavity对比.md",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/06_自干涉如何证明OAM.md",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity/05_Stokes参数与偏振涡旋.md",
-    "精读文献/原子笔记_Vortex nanolaser based on a photonic disclination cavity",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/10_SI证据链.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/09_衬底兼容性与PCSEL前景.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/08_SOI实验验证.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities/07_手征对称性为什么重要.md",
-    "精读文献/原子笔记_Dirac-vortex topological cavities",
     "codex_job/obsidian/outputs/reports/assets/硅基狄拉克涡旋腔交叉偏振反射光路.svg",
     "ResearchVault/results/plots/quantum_models_overview.png",
     "ResearchVault/results/plots/molecular_effective_potential.png",
