@@ -12,8 +12,8 @@ journal: Nature Nanotechnology
 year: 2020
 doi: 10.1038/s41565-020-0773-7
 source_pdfs:
-  - "原始资料_PDF_不上传/papers/03_topological_photonics/Dirac-vortex topological cavities.pdf"
-  - "原始资料_PDF_不上传/papers/03_topological_photonics/SI-Dirac-vortex topological cavities.pdf"
+  - "90-Local_Not_Upload/PDF/papers/03_topological_photonics/Dirac-vortex topological cavities.pdf"
+  - "90-Local_Not_Upload/PDF/papers/03_topological_photonics/SI-Dirac-vortex topological cavities.pdf"
 created: 2026-05-12
 ---
 

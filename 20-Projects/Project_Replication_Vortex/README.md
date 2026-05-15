@@ -75,7 +75,7 @@ output/mjYYYYMMDD_{seq}.gds
 首次使用时创建 conda 环境：
 
 ```bash
-cd /Users/mac/Documents/mengjie/MengjieVault/codex_job/code/Project_Replication_Vortex
+cd /Users/mac/Documents/mengjie/MengjieVault/20-Projects/Project_Replication_Vortex
 conda env create -f environment.yml
 ```
 

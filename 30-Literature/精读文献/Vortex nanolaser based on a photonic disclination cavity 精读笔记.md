@@ -14,8 +14,8 @@ year: 2024
 doi: 10.1038/s41566-023-01338-2
 official_main_url: "https://www.nature.com/articles/s41566-023-01338-2"
 source_pdfs:
-  - "原始资料_PDF_不上传/papers/02_on_chip_lasers/Vortex nanolaser based on a photonic.pdf"
-  - "原始资料_PDF_不上传/papers/02_on_chip_lasers/SI_Vortex nanolaser based on a photonic disclination cavity.pdf"
+  - "90-Local_Not_Upload/PDF/papers/02_on_chip_lasers/Vortex nanolaser based on a photonic.pdf"
+  - "90-Local_Not_Upload/PDF/papers/02_on_chip_lasers/SI_Vortex nanolaser based on a photonic disclination cavity.pdf"
 created: 2026-05-12
 ---
 

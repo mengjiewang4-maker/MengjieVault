@@ -45,8 +45,8 @@ tags:
 - `/Users/mac/Documents/mengjie/MengjieVault/codex_job/obsidian/wiki/research/topics/Photonic disclination cavity.md`
 - `/Users/mac/Documents/mengjie/MengjieVault/codex_job/obsidian/wiki/research/topics/Angular momentum labeling in TB.md`
 - `/Users/mac/Documents/mengjie/MengjieVault/codex_job/obsidian/wiki/research/topics/TB-to-photonic mapping.md`
-- `/Users/mac/Documents/mengjie/MengjieVault/codex_job/code/Project_Replication_Vortex/README.md`
-- `/Users/mac/Documents/mengjie/MengjieVault/codex_job/code/Project_Replication_Vortex/disclination_vortex_gds.py`
+- `/Users/mac/Documents/mengjie/MengjieVault/20-Projects/Project_Replication_Vortex/README.md`
+- `/Users/mac/Documents/mengjie/MengjieVault/20-Projects/Project_Replication_Vortex/disclination_vortex_gds.py`
 
 ## 待补
 
