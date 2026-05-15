@@ -31,6 +31,6 @@ status: draft
 
 ## 关联概念
 
-- [[superposition]]
-- [[measurement]]
-- [[wavefunction]]
+- [[演示/wiki/concepts/superposition]]
+- [[演示/wiki/concepts/measurement]]
+- [[演示/wiki/concepts/wavefunction]]

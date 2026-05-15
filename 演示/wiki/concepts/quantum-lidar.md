@@ -46,6 +46,6 @@ status: draft
 ## 相关笔记
 
 - [[量子激光雷达研究综述（特邀）]]
-- [[measurement]]
-- [[superposition]]
-- [[uncertainty-principle]]
+- [[演示/wiki/concepts/measurement]]
+- [[演示/wiki/concepts/superposition]]
+- [[演示/wiki/concepts/uncertainty-principle]]

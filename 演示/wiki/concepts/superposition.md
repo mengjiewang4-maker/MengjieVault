@@ -30,6 +30,6 @@ $$
 
 ## 相关笔记
 
-- [[measurement]]
-- [[double-slit]]
-- [[wavefunction]]
+- [[演示/wiki/concepts/measurement]]
+- [[演示/wiki/demos/double-slit]]
+- [[演示/wiki/concepts/wavefunction]]

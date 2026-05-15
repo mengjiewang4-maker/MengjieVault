@@ -35,6 +35,6 @@ $$
 
 ## 相关笔记
 
-- [[schrodinger-equation]]
-- [[measurement]]
-- [[量子力学/01]]
+- [[演示/wiki/math/schrodinger-equation]]
+- [[演示/wiki/concepts/measurement]]
+- [[演示/量子力学/01]]

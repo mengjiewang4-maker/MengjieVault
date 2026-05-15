@@ -31,5 +31,5 @@ $$
 
 ## 相关笔记
 
-- [[wavefunction]]
-- [[measurement]]
+- [[演示/wiki/concepts/wavefunction]]
+- [[演示/wiki/concepts/measurement]]

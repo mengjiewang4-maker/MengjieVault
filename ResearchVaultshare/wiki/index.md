@@ -29,10 +29,10 @@ tags:
 
 ## 建议优先主题 / Suggested First Topics
 
-- [[wavefunction|波函数 / Wavefunction]]
-- [[superposition|叠加态 / Superposition]]
-- [[measurement|测量 / Measurement]]
-- [[uncertainty-principle|不确定性原理 / Uncertainty Principle]]
-- [[schrodinger-equation|薛定谔方程 / Schrodinger Equation]]
-- [[double-slit|双缝 / Double Slit]]
-- [[spin-visualization|自旋可视化 / Spin Visualization]]
+- [[ResearchVaultshare/wiki/concepts/wavefunction|波函数 / Wavefunction]]
+- [[ResearchVaultshare/wiki/concepts/superposition|叠加态 / Superposition]]
+- [[ResearchVaultshare/wiki/concepts/measurement|测量 / Measurement]]
+- [[ResearchVaultshare/wiki/concepts/uncertainty-principle|不确定性原理 / Uncertainty Principle]]
+- [[ResearchVaultshare/wiki/math/schrodinger-equation|薛定谔方程 / Schrodinger Equation]]
+- [[ResearchVaultshare/wiki/demos/double-slit|双缝 / Double Slit]]
+- [[ResearchVaultshare/wiki/demos/spin-visualization|自旋可视化 / Spin Visualization]]

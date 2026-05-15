@@ -11,5 +11,5 @@ tags:
 
 ## 当前演示
 
-- [[double-slit|双缝演示]]
-- [[spin-visualization|自旋可视化]]
+- [[演示/wiki/demos/double-slit|双缝演示]]
+- [[演示/wiki/demos/spin-visualization|自旋可视化]]

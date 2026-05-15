@@ -11,4 +11,4 @@ tags:
 
 ## 当前页面
 
-- [[schrodinger-equation|薛定谔方程]]
+- [[演示/wiki/math/schrodinger-equation|薛定谔方程]]

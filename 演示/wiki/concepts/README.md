@@ -12,7 +12,7 @@ tags:
 ## 当前概念
 
 - [[quantum-lidar|量子激光雷达]]
-- [[wavefunction|波函数]]
-- [[superposition|叠加态]]
-- [[measurement|测量]]
-- [[uncertainty-principle|不确定性原理]]
+- [[演示/wiki/concepts/wavefunction|波函数]]
+- [[演示/wiki/concepts/superposition|叠加态]]
+- [[演示/wiki/concepts/measurement|测量]]
+- [[演示/wiki/concepts/uncertainty-principle|不确定性原理]]

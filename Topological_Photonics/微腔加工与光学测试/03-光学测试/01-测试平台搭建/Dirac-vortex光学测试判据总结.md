@@ -36,8 +36,8 @@ tags:
 ## 需要参考的资料
 
 - [[Dirac-vortex 理论知识]]
-- [[00-索引]]
-- [[01]]
+- [[演示/量子力学/00-索引]]
+- [[演示/量子力学/01]]
 - [[02]]
 - `/Users/mac/Documents/mengjie/MengjieVault/codex_job/obsidian/raw/papers/03_topological_photonics/Dirac-vortex topological cavities.md`
 - `/Users/mac/Documents/mengjie/MengjieVault/codex_job/obsidian/wiki/research/topics/Dirac 涡旋腔设计.md`

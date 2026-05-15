@@ -22,5 +22,5 @@ status: draft
 
 ## 关联概念
 
-- [[superposition]]
-- [[measurement]]
+- [[演示/wiki/concepts/superposition]]
+- [[演示/wiki/concepts/measurement]]

@@ -24,6 +24,6 @@ status: draft
 
 ## 相关笔记
 
-- [[superposition]]
-- [[double-slit]]
-- [[uncertainty-principle]]
+- [[演示/wiki/concepts/superposition]]
+- [[演示/wiki/demos/double-slit]]
+- [[演示/wiki/concepts/uncertainty-principle]]

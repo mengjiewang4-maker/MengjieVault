@@ -367,7 +367,7 @@ Dirac-vortex cavity 的核心价值是把“单模选择”从普通几何缺陷
 
 ## 相关笔记
 
-- [[00-索引]]
-- [[01]]
+- [[Topological_Photonics/00-索引]]
+- [[Topological_Photonics/01]]
 - [[02]]
 - [[Dirac-vortex topological cavities 精读笔记]]

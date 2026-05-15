@@ -12,7 +12,7 @@ status: draft
 
 ## 作用
 
-薛定谔方程描述量子态如何随时间演化，是从 [[wavefunction|波函数]] 计算概率分布变化的核心模型。
+薛定谔方程描述量子态如何随时间演化，是从 [[演示/wiki/concepts/wavefunction|波函数]] 计算概率分布变化的核心模型。
 
 ## 时间依赖形式
 
@@ -34,5 +34,5 @@ $$
 
 ## 相关笔记
 
-- [[wavefunction]]
-- [[superposition]]
+- [[演示/wiki/concepts/wavefunction]]
+- [[演示/wiki/concepts/superposition]]
