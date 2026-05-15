@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<layer-properties>
+    <layer number="1" color="ff0000" hatch_pattern="solid" width="3"/>
+    <layer number="2" color="00ff00" hatch_pattern="solid" width="3"/>
+    <layer number="3" color="0000ff" hatch_pattern="solid" width="3"/>
+    <layer number="10" color="999999" hatch_pattern="solid" width="2"/>
+    <layer number="99" color="ffff00" hatch_pattern="solid" width="2"/>
+</layer-properties>
