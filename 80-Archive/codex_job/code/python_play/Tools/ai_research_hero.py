@@ -6,6 +6,9 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import warnings
 
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+
 # 1. 屏蔽 PDF 字体解析的冗余警告
 warnings.filterwarnings("ignore")
 
@@ -54,14 +57,14 @@ def start_smart_library():
     if not target_dir: return
 
     # 建立结果总目录
-    result_base = os.path.join(target_dir, "00_Smart_Library_Results")
+    result_base = Path(target_dir) / "00_Smart_Library_Results"
     
     all_files = []
     for root_path, _, files in os.walk(target_dir):
         if "00_Smart_Library_Results" in root_path: continue
         for file in files:
             if file.lower().endswith('.pdf'):
-                all_files.append(os.path.join(root_path, file))
+                all_files.append(Path(root_path) / file)
 
     if not all_files:
         messagebox.showinfo("提示", "未找到 PDF 文件。")
@@ -70,7 +73,7 @@ def start_smart_library():
     print(f"🧬 M4 引擎启动：正在深度解析 {len(all_files)} 个文档...")
 
     for path in all_files:
-        original_name = os.path.basename(path)
+        original_name = Path(path).name
         try:
             with pdfplumber.open(path) as pdf:
                 # --- 提取逻辑升级 ---
@@ -94,11 +97,11 @@ def start_smart_library():
             parts = smart_name.split("_")
             category = parts[1] if len(parts) > 1 else "综合未分类"
             
-            dest_folder = os.path.join(result_base, category)
-            if not os.path.exists(dest_folder): os.makedirs(dest_folder)
+            dest_folder = result_base / category
+            dest_folder.mkdir(parents=True, exist_ok=True)
             
             # 移动并重命名
-            new_full_path = os.path.join(dest_folder, f"{smart_name}.pdf")
+            new_full_path = dest_folder / f"{smart_name}.pdf"
             shutil.move(path, new_full_path)
             print(f"✨ 归档成功: {smart_name}")
             
@@ -109,7 +112,7 @@ def start_smart_library():
     print("🧹 正在清理多余空目录...")
     for root_path, dirs, files in os.walk(target_dir, topdown=False):
         if "00_Smart_Library_Results" in root_path: continue
-        if not os.listdir(root_path):
+        if not any(Path(root_path).iterdir()):
             try:
                 os.rmdir(root_path)
             except: pass

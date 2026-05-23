@@ -4,6 +4,9 @@ from tkinter import filedialog, messagebox
 from rembg import remove
 from PIL import Image
 
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+
 def run_remove_bg():
     root = tk.Tk()
     root.withdraw()
@@ -18,9 +21,10 @@ def run_remove_bg():
         return
 
     # 2. 准备输出路径 (保存为 png)
-    dir_name = os.path.dirname(file_path)
-    pure_name = os.path.splitext(os.path.basename(file_path))[0]
-    output_path = os.path.join(dir_name, f"{pure_name}_transparent.png")
+    input_path = Path(file_path)
+    dir_name = input_path.parent
+    pure_name = input_path.stem
+    output_path = dir_name / f"{pure_name}_transparent.png"
 
     try:
         print(f"正在抠图: {file_path}...")

@@ -3,6 +3,9 @@ import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+
 def whisper_transcribe():
     # 1. 初始化 tkinter 并隐藏主窗口
     root = tk.Tk()
@@ -18,9 +21,10 @@ def whisper_transcribe():
         return
 
     # 3. 自动计算保存路径 (同源路径，后缀为 .txt)
-    dir_name = os.path.dirname(file_path)
-    pure_name = os.path.splitext(os.path.basename(file_path))[0]
-    output_path = os.path.join(dir_name, f"{pure_name}_transcription.txt")
+    input_path = Path(file_path)
+    dir_name = input_path.parent
+    pure_name = input_path.stem
+    output_path = dir_name / f"{pure_name}_transcription.txt"
 
     try:
         # 弹出“加载中”提示 (避免用户以为死机)

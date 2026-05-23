@@ -1,0 +1,6 @@
+gdstk
+ezdxf
+numpy
+matplotlib
+shapely
+

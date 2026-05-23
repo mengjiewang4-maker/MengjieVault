@@ -1,0 +1,21 @@
+# Conda 环境配置：用来创建运行这些 GDS 生成脚本所需的 Python 环境。
+name: project_vortex_layout
+
+# channels 表示安装包来源；conda-forge 通常更新更快，defaults 是 Anaconda 默认源。
+channels:
+  - conda-forge
+  - defaults
+
+# dependencies 表示这个项目需要安装的软件包。
+dependencies:
+  # Python 主版本；如果版本差太多，部分库的行为可能不同。
+  - python=3.11
+  # numpy 用于数组、矩阵和三角函数计算。
+  - numpy
+  # jupyter 用于打开和运行 .ipynb Notebook。
+  - jupyter
+  # pip 用于安装 Conda 里没有或需要从 PyPI 安装的包。
+  - pip
+  - pip:
+      # klayout 提供 Python API，用来创建和写出 GDS 版图文件。
+      - klayout

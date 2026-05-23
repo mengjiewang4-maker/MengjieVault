@@ -8,8 +8,14 @@ raw/
 **/.obsidian/workspace.json
 __pycache__/
 *.pyc
+.venv/
+.idea/
+.vscode/
+.ipynb_checkpoints/
 **/.git.embedded.backup/
 
 # 大型仿真/版图输出文件，不适合直接放入 GitHub
 codex_job/code/Project_Replication_Vortex/output/
 20-Projects/Project_Replication_Vortex/output/
+*.gds
+*.oas

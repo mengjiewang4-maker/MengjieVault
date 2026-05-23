@@ -1,0 +1,64 @@
+{
+  "selected_dxf": "/Users/mac/Documents/mengjie/MengjieVault/20-Projects/02_Comsol_samulation/disclination.dxf",
+  "unit_conversion": "auto: raw extent < 1e-3, treat as meter",
+  "entity_counts": {
+    "LWPOLYLINE": 3445
+  },
+  "construction_removed_count": 0,
+  "raw_line_count": 22469,
+  "merged_line_type": "MultiLineString",
+  "polygonized_count": 5409,
+  "final_polygon_count": 1,
+  "hole_count": 285,
+  "boundary_count": 1,
+  "total_width_um": 26.460000000000004,
+  "total_height_um": 26.46,
+  "max_dimension_um": 26.460000000000004,
+  "min_polygon_size_um": 0.147,
+  "min_polygon_area_um2": 0.016958478569567493,
+  "approx_min_hole_edge_spacing_um": 0.12851126592653664,
+  "tiny_fragment_count": 0,
+  "invalid_before_count": 0,
+  "invalid_after_count": 0,
+  "fabrication_assessment": "适合进入电子束曝光前检查流程",
+  "risks": [
+    "未发现小于 20 nm 的小特征",
+    "近似最小孔边距未低于 20 nm",
+    "buffer(0) 后未检测到 invalid polygon",
+    "已用 polygonize + unary_union + buffer(0) 修复，但送厂前仍建议用 KLayout 做工艺 DRC"
+  ],
+  "dxf_candidates": [
+    {
+      "name": "disclination.dxf",
+      "path": "/Users/mac/Documents/mengjie/MengjieVault/20-Projects/02_Comsol_samulation/disclination.dxf",
+      "size_bytes": 1877088,
+      "entity_counts": {
+        "LWPOLYLINE": 3445
+      },
+      "keywords": [
+        "disclination"
+      ],
+      "raw_extent": 2.6460000000000008e-05,
+      "score": 4445
+    }
+  ],
+  "recommended_dxf": {
+    "name": "disclination.dxf",
+    "path": "/Users/mac/Documents/mengjie/MengjieVault/20-Projects/02_Comsol_samulation/disclination.dxf",
+    "size_bytes": 1877088,
+    "entity_counts": {
+      "LWPOLYLINE": 3445
+    },
+    "keywords": [
+      "disclination"
+    ],
+    "raw_extent": 2.6460000000000008e-05,
+    "score": 4445
+  },
+  "cell": "disclination_vortex",
+  "layers": {
+    "1": "空气孔/刻蚀孔",
+    "10": "外边界",
+    "20": "文字说明"
+  }
+}

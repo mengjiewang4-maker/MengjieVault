@@ -7,6 +7,9 @@ from docx import Document
 from sklearn.feature_extraction.text import TfidfVectorizer
 import warnings
 
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+
 # 忽略 PDF 字体小报错
 warnings.filterwarnings("ignore")
 
@@ -44,7 +47,7 @@ def start_ultimate_clean():
     if not target_dir: return
 
     # 定义结果总目录（放在所选目录下）
-    result_base = os.path.join(target_dir, "00_AI_Organized_Results")
+    result_base = Path(target_dir) / "00_AI_Organized_Results"
     
     all_files = []
     # 1. 深度扫描所有文件
@@ -54,7 +57,7 @@ def start_ultimate_clean():
         
         for file in files:
             if file.lower().endswith(('.pdf', '.docx')) and not file.startswith('.'):
-                all_files.append(os.path.join(root_path, file))
+                all_files.append(Path(root_path) / file)
 
     if not all_files:
         messagebox.showinfo("提示", "没发现需要整理的文件。")
@@ -64,15 +67,15 @@ def start_ultimate_clean():
 
     # 2. 移动文件并分类
     for path in all_files:
-        filename = os.path.basename(path)
+        filename = Path(path).name
         content = extract_text(path)
         category = get_fast_keywords(content)
         
-        dest_folder = os.path.join(result_base, category)
-        if not os.path.exists(dest_folder): os.makedirs(dest_folder)
+        dest_folder = result_base / category
+        dest_folder.mkdir(parents=True, exist_ok=True)
         
         try:
-            shutil.move(path, os.path.join(dest_folder, filename))
+            shutil.move(path, dest_folder / filename)
             print(f"🚚 已搬家: {filename} -> {category}")
         except Exception as e:
             print(f"❌ 移动失败 {filename}: {e}")
@@ -84,9 +87,9 @@ def start_ultimate_clean():
         if "00_AI_Organized_Results" in root_path: continue
         
         # 如果这个文件夹里既没文件也没子文件夹，就删了它
-        if not os.listdir(root_path):
+        if not any(Path(root_path).iterdir()):
             os.rmdir(root_path)
-            print(f"🗑️ 已删除空文件夹: {os.path.basename(root_path)}")
+            print(f"🗑️ 已删除空文件夹: {Path(root_path).name}")
 
     messagebox.showinfo("大功告成", f"清理完毕！所有文件已归类至 '00_AI_Organized_Results'。")
     os.system(f"open '{result_base}'")

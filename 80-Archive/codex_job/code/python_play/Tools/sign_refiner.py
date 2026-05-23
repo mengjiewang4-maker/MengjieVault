@@ -4,6 +4,9 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import os
 
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+
 def refine_signature_pro():
     root = tk.Tk()
     root.withdraw()
@@ -32,8 +35,9 @@ def refine_signature_pro():
         table = np.array([((i / 255.0) ** invGamma) * 255 for i in np.arange(0, 256)]).astype("uint8")
         result = cv2.LUT(result, table)
 
-        output_path = os.path.splitext(file_path)[0] + "_精准修复.png"
-        cv2.imwrite(output_path, result)
+        input_path = Path(file_path)
+        output_path = input_path.with_name(f"{input_path.stem}_精准修复.png")
+        cv2.imwrite(str(output_path), result)
         
         messagebox.showinfo("成功", "修复完成！如果还是不理想，请尝试调整脚本中的百分比数值。")
         os.system(f"open '{output_path}'")

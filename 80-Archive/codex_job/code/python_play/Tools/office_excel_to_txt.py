@@ -1,7 +1,9 @@
 import pandas as pd
-import os
 import tkinter as tk
 from tkinter import filedialog, messagebox
+
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
 
 def excel_to_txt_gui():
     root = tk.Tk()
@@ -18,9 +20,10 @@ def excel_to_txt_gui():
 
     try:
         # 2. 自动生成同源路径
-        dir_name = os.path.dirname(file_path)
-        pure_name = os.path.splitext(os.path.basename(file_path))[0]
-        output_path = os.path.join(dir_name, f"{pure_name}.txt")
+        input_path = Path(file_path)
+        dir_name = input_path.parent
+        pure_name = input_path.stem
+        output_path = dir_name / f"{pure_name}.txt"
 
         # 3. 读取并保存为 Tab 分隔的 TXT
         df = pd.read_excel(file_path)

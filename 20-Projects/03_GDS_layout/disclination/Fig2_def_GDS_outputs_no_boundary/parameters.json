@@ -1,0 +1,79 @@
+{
+  "generated_at": "2026-05-20T18:32:55",
+  "implementation_library": "klayout.db",
+  "fig2_mapping": {
+    "Fig2d": "C5 TB in-gap states; not a separate GDS geometry.",
+    "Fig2e": "C5 TB probability density and angular momentum classification; not a separate GDS geometry.",
+    "Fig2f": "Designed C5 photonic disclination cavity and optical Hz modes; this GDS geometry corresponds to Fig.2f."
+  },
+  "parameters": {
+    "lattice_constant_um": 0.5,
+    "hole_radius_um": 0.1,
+    "center_to_hole_distance_um": 0.225,
+    "lattice_range": 13,
+    "source_sector_angle_rad": 1.5707963267948966,
+    "added_sector_angle_rad": 1.5707963267948966,
+    "target_sector_count": 5,
+    "inner_radius_um": 0.0,
+    "outer_radius_um": 6.825,
+    "core_shift_um": 0.125,
+    "boundary_shift_um": 0.115,
+    "interior_corner_shift_um": 0.0,
+    "layer": 1,
+    "datatype": 0,
+    "circle_points": 96,
+    "png_dpi": 300,
+    "dbu_um": 0.001,
+    "refractive_index": 3.33,
+    "slab_thickness_um": 0.275,
+    "output_dir": "/Users/mac/Documents/mengjie/MengjieVault/20-Projects/03_GDS_layout/disclination/Fig2_def_GDS_outputs_no_boundary"
+  },
+  "hole_count": 2755,
+  "role_counts": {
+    "bulk_0325_style": 2755
+  },
+  "pending_confirmation": [
+    "论文 Fig. 2d/e 是 TB 结果，不是独立 GDS 几何；本脚本只输出对应 C5 photonic cavity 几何。",
+    "COMSOL 目录只有截图，没有可机器读取的 mph/txt/md 参数文件；截图参数仅作为本地历史参考。",
+    "论文 Extended Data Fig. 3 给出 db/di，但没有完整说明每个边界孔的逐点位移规则；当前 GDS 使用 0325 TB 风格连续点阵并显式应用核心 dc 修正，db/di 写入参数等待进一步核对。",
+    "GDS 只包含平面空气孔图形；slab 厚度和折射率写入 JSON/README，供 COMSOL/Lumerical 建模使用。"
+  ],
+  "sources": {
+    "paper_fig2": "Fig. 2d/e are TB in-gap states and probability density; Fig. 2f is C5 photonic cavity and Hz modes.",
+    "paper_extended_data_fig3": {
+      "a": "500 nm",
+      "C5_r0_d0": "(r0, d0) = (0.20a, 0.45a)",
+      "C5_dc_db_di": "(dc, db, di) = (0.25a, 0.23a, 0)",
+      "refractive_index": 3.33,
+      "note": "These cavities are identical to Fig. 2c/f/i; C5 is Fig. 2f."
+    },
+    "local_comsol_screenshots": [
+      {
+        "a": "554 nm",
+        "R": "18a",
+        "r": "0.20a",
+        "n_substrate": 3.33
+      },
+      {
+        "a": "559 nm",
+        "R": "18a",
+        "r": "0.20a",
+        "n_substrate": 3.4
+      },
+      {
+        "a": "555 nm",
+        "R": "18a",
+        "r": "0.15a",
+        "n_substrate": 3.4
+      }
+    ],
+    "geometry_mode": "0325_style_continuous_c5_no_visible_sector_boundaries",
+    "original_script": "/Users/mac/Documents/mengjie/MengjieVault/20-Projects/03_GDS_layout/Disclination_vortex_backup_20260519_1432/vippy_backup_20260519_1230/disclination_vortex_gds.py",
+    "paper_path": "/Users/mac/Documents/mengjie/MengjieVault/90-Local_Not_Upload/PDF/papers/02_on_chip_lasers/Vortex nanolaser based on a photonic disclination cavity.pdf"
+  },
+  "generated_files": {
+    "gds": "/Users/mac/Documents/mengjie/MengjieVault/20-Projects/03_GDS_layout/disclination/Fig2_def_GDS_outputs_no_boundary/fig2def_c5_no_boundary_0325_style.gds",
+    "png": "/Users/mac/Documents/mengjie/MengjieVault/20-Projects/03_GDS_layout/disclination/Fig2_def_GDS_outputs_no_boundary/fig2def_c5_no_boundary_0325_style_preview.png",
+    "readme": "/Users/mac/Documents/mengjie/MengjieVault/20-Projects/03_GDS_layout/disclination/Fig2_def_GDS_outputs_no_boundary/README.md"
+  }
+}

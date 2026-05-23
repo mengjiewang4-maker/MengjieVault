@@ -8,6 +8,9 @@ from tkinter import filedialog, messagebox
 import warnings
 from openpyxl.styles import Alignment # 新增导入，用于稳定设置换行
 
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+
 warnings.filterwarnings("ignore")
 
 def clean_markdown(text):
@@ -30,11 +33,11 @@ def start_mission():
     target_dir = filedialog.askdirectory(title="选择论文文件夹")
     if not target_dir: return
 
-    files = [f for f in os.listdir(target_dir) if f.lower().endswith('.pdf')]
+    files = [p.name for p in Path(target_dir).iterdir() if p.is_file() and p.suffix.lower() == '.pdf']
     all_results = []
 
     for file in files:
-        path = os.path.join(target_dir, file)
+        path = Path(target_dir) / file
         try:
             with pdfplumber.open(path) as pdf:
                 content = "".join([p.extract_text() or "" for p in pdf.pages[:3]])
@@ -46,7 +49,7 @@ def start_mission():
 
     if all_results:
         df = pd.DataFrame(all_results)
-        output_file = os.path.join(target_dir, "00_AI_论文深度总结.xlsx")
+        output_file = Path(target_dir) / "00_AI_论文深度总结.xlsx"
         
         # --- 修复后的保存逻辑 ---
         writer = pd.ExcelWriter(output_file, engine='openpyxl')

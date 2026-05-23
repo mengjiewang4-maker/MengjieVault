@@ -5,6 +5,9 @@ import requests
 import tkinter as tk
 from tkinter import filedialog, messagebox
 
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
+
 def ask_qwen_deep_reading(text):
     url = "http://localhost:11434/api/generate"
     # 恢复刚才那个“有灵魂”的提示词
@@ -35,13 +38,13 @@ def start_mission():
     target_dir = filedialog.askdirectory(title="选择论文文件夹")
     if not target_dir: return
 
-    files = [f for f in os.listdir(target_dir) if f.lower().endswith('.pdf')]
+    files = [p.name for p in Path(target_dir).iterdir() if p.is_file() and p.suffix.lower() == '.pdf']
     all_results = []
 
     print(f"🧬 M4 恢复“深度模式”，正在精读 {len(files)} 篇论文...")
 
     for file in files:
-        path = os.path.join(target_dir, file)
+        path = Path(target_dir) / file
         try:
             with pdfplumber.open(path) as pdf:
                 content = "".join([p.extract_text() or "" for p in pdf.pages[:3]])
@@ -59,7 +62,7 @@ def start_mission():
 
     if all_results:
         df = pd.DataFrame(all_results)
-        output_file = os.path.join(target_dir, "00_AI_论文深度总结报表.xlsx")
+        output_file = Path(target_dir) / "00_AI_论文深度总结报表.xlsx"
         
         # 优化 Excel 显示：自动换行
         writer = pd.ExcelWriter(output_file, engine='openpyxl')

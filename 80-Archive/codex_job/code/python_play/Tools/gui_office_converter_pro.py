@@ -1,7 +1,9 @@
 import pandas as pd
-import os
 import tkinter as tk
 from tkinter import ttk, filedialog, messagebox
+
+from pathlib import Path
+ROOT = Path(__file__).resolve().parent
 
 def start_conversion():
     # 1. 获取用户选择的模式
@@ -18,17 +20,18 @@ def start_conversion():
 
     try:
         # 3. 路径处理
-        dir_name = os.path.dirname(file_path)
-        pure_name = os.path.splitext(os.path.basename(file_path))[0]
+        input_path = Path(file_path)
+        dir_name = input_path.parent
+        pure_name = input_path.stem
         
         # 4. 根据模式执行逻辑
         if mode == "TXT 转 Excel":
-            output_path = os.path.join(dir_name, f"{pure_name}.xlsx")
+            output_path = dir_name / f"{pure_name}.xlsx"
             # 这里默认逗号分隔，你可以根据需要修改
             df = pd.read_csv(file_path, sep=',', engine='python', encoding='utf-8')
             df.to_excel(output_path, index=False)
         else:
-            output_path = os.path.join(dir_name, f"{pure_name}.txt")
+            output_path = dir_name / f"{pure_name}.txt"
             df = pd.read_excel(file_path)
             df.to_csv(output_path, sep='\t', index=False, encoding='utf-8')
 

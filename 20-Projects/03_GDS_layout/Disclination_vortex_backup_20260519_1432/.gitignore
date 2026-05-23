@@ -1,0 +1,14 @@
+# 本项目的本地缓存
+.DS_Store
+__pycache__/
+*.pyc
+
+# GDS 版图产物体积较大，保留本地，不上传 GitHub
+20-加工GDS_不上传/
+output/
+*.gds
+
+# 嵌入仓库备份，只保留本地
+90-本地备份_不上传/
+.git.embedded.backup/
+
