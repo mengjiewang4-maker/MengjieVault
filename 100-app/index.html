@@ -777,7 +777,7 @@
           <div class="row">
             <div class="field">
               <label for="fab_sample">样品编号</label>
-              <input id="fab_sample" data-fab="sample" placeholder="S1">
+              <input id="fab_sample" data-fab="sample" placeholder="S1-S2-S3">
             </div>
             <div class="field">
               <label for="fab_array">阵列编号</label>
@@ -1375,7 +1375,10 @@
       }
 
       function updateFabPreview() {
-        byId("fabPreview").textContent = makeSampleId(collectForm("fab"));
+        var fab = collectForm("fab");
+        byId("fabPreview").textContent = expandSamples(fab.sample).map(function (sample) {
+          return makeSampleId(Object.assign({}, fab, { sample: sample }));
+        }).join("\n");
       }
 
       function updateSemPreview() {
@@ -1445,13 +1448,29 @@
       }
 
       function saveFabRecord() {
-        var record = makeFabRecord(true);
-        finishSave(record, "加工记录已保存");
+        var records = makeFabRecords(true);
+        records.forEach(function (record) {
+          finishSave(record, "", true);
+        });
+        renderHistory();
+        if (records.length) {
+          selectedRecordId = records[0].id;
+          byId("detailMarkdown").value = records[0].markdown;
+        }
+        showToast("已保存 " + records.length + " 个样品加工记录");
         updateSemSampleOptions();
       }
 
-      function makeFabRecord(persist) {
+      function makeFabRecords(persist) {
         var fab = collectForm("fab");
+        if (persist) saveDraft("fab", fab);
+        return expandSamples(fab.sample).map(function (sample) {
+          return makeFabRecord(Object.assign({}, fab, { sample: sample }));
+        });
+      }
+
+      function makeFabRecord(persist) {
+        var fab = typeof persist === "object" ? persist : collectForm("fab");
         var sampleId = makeSampleId(fab);
         var record = baseRecord("加工记录", fab);
         record.sample_id = sampleId;
@@ -1465,7 +1484,7 @@
         record.photo_range = makePhotoRange(fab.photo_start, fab.photo_end);
         record.photo_note = fab.photo_note;
         record.step_photos = collectStepPhotos();
-        if (persist) saveDraft("fab", fab);
+        if (persist === true) saveDraft("fab", fab);
         return record;
       }
 
@@ -1521,15 +1540,17 @@
         };
       }
 
-      function finishSave(record, message) {
+      function finishSave(record, message, silent) {
         record.markdown = buildMarkdown(record);
         var records = readRecords();
         records.unshift(record);
         localStorage.setItem(STORE_RECORDS, JSON.stringify(records.slice(0, 500)));
         selectedRecordId = record.id;
         byId("detailMarkdown").value = record.markdown;
-        renderHistory();
-        showToast(message);
+        if (!silent) {
+          renderHistory();
+          showToast(message);
+        }
       }
 
       function buildMarkdown(record) {
@@ -1898,6 +1919,16 @@
         if (!value) return "";
         if (value.indexOf(prefix.toUpperCase()) === 0) return cleanToken(value);
         return prefix + cleanToken(value);
+      }
+
+      function expandSamples(value) {
+        value = clean(value).toUpperCase();
+        if (!value) return ["S1"];
+        var parts = value.split(/[-,，、\\s]+/).filter(Boolean);
+        if (!parts.length) return ["S1"];
+        return parts.map(function (part) {
+          return normPrefixed(part, "S", "");
+        });
       }
 
       function normSemIndex(value) {
