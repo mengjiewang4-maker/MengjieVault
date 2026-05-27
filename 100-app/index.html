@@ -10,20 +10,36 @@
   <title>iPhone 实验记录卡 Pro</title>
   <style>
     :root {
+      color-scheme: light dark;
       --bg: #f5f5f7;
-      --card: #ffffff;
+      --panel: rgba(255, 255, 255, 0.86);
+      --panel-solid: #ffffff;
       --text: #1d1d1f;
       --muted: #6e6e73;
-      --line: #d2d2d7;
-      --soft-line: #e8e8ed;
+      --line: rgba(60, 60, 67, 0.18);
+      --soft: rgba(118, 118, 128, 0.12);
       --blue: #007aff;
-      --blue-dark: #005ecb;
       --green: #34c759;
-      --red: #ff3b30;
       --orange: #ff9500;
-      --shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      --red: #ff3b30;
+      --purple: #5856d6;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.08);
       --radius: 8px;
-      --bar-h: 88px;
+      --nav-h: 64px;
+      --bar-h: 86px;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101012;
+        --panel: rgba(28, 28, 30, 0.86);
+        --panel-solid: #1c1c1e;
+        --text: #f5f5f7;
+        --muted: #a1a1a6;
+        --line: rgba(235, 235, 245, 0.16);
+        --soft: rgba(235, 235, 245, 0.10);
+        --shadow: 0 18px 50px rgba(0, 0, 0, 0.36);
+      }
     }
 
     * {
@@ -40,7 +56,19 @@
     body {
       margin: 0;
       min-height: 100vh;
-      background: linear-gradient(180deg, #fbfbfd 0%, var(--bg) 36%, #eeeeF2 100%);
+      background:
+        radial-gradient(circle at 20% -10%, rgba(0, 122, 255, 0.14), transparent 34%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.72), transparent 280px),
+        var(--bg);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background:
+          radial-gradient(circle at 20% -10%, rgba(0, 122, 255, 0.22), transparent 34%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.04), transparent 280px),
+          var(--bg);
+      }
     }
 
     button,
@@ -56,58 +84,184 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    .app {
-      width: min(100%, 780px);
-      margin: 0 auto;
-      padding: calc(18px + env(safe-area-inset-top)) 14px calc(var(--bar-h) + 28px + env(safe-area-inset-bottom));
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      min-height: calc(var(--nav-h) + env(safe-area-inset-top));
+      padding: calc(10px + env(safe-area-inset-top)) 14px 10px;
+      background: rgba(245, 245, 247, 0.78);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
     }
 
-    header {
-      padding: 8px 4px 10px;
+    @media (prefers-color-scheme: dark) {
+      .topbar {
+        background: rgba(16, 16, 18, 0.78);
+      }
+    }
+
+    .top-inner {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 46px 1fr 46px;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .icon-btn {
+      width: 44px;
+      height: 44px;
+      border-radius: 14px;
+      background: var(--soft);
+      color: var(--text);
+      font-size: 22px;
+      font-weight: 800;
+    }
+
+    .top-title {
+      text-align: center;
+      min-width: 0;
+    }
+
+    .top-title strong {
+      display: block;
+      font-size: 16px;
+      line-height: 1.2;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .top-title span {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 12px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .app {
+      width: min(100%, 860px);
+      margin: 0 auto;
+      padding: 14px 14px calc(var(--bar-h) + 28px + env(safe-area-inset-bottom));
+    }
+
+    .view {
+      display: none;
+      animation: appear 0.18s ease-out;
+    }
+
+    .view.active {
+      display: block;
+    }
+
+    @keyframes appear {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .hero {
+      padding: 10px 2px 14px;
     }
 
     .eyebrow {
+      margin: 0 0 6px;
       color: var(--muted);
       font-size: 13px;
-      font-weight: 650;
-      letter-spacing: 0;
-      margin: 0 0 6px;
+      font-weight: 700;
     }
 
     h1 {
       margin: 0;
-      font-size: 28px;
-      line-height: 1.15;
+      font-size: 30px;
+      line-height: 1.12;
       letter-spacing: 0;
     }
 
-    .subtitle {
-      margin: 8px 0 0;
+    .sub {
+      margin: 9px 0 0;
       color: var(--muted);
       font-size: 15px;
       line-height: 1.45;
     }
 
+    .grid-menu {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .menu-card,
     .card {
-      background: rgba(255, 255, 255, 0.92);
-      border: 1px solid rgba(210, 210, 215, 0.8);
+      background: var(--panel);
+      border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
-      margin: 14px 0;
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .menu-card {
+      min-height: 118px;
+      padding: 16px;
+      color: var(--text);
+      text-align: left;
+      display: grid;
+      align-content: space-between;
+      gap: 14px;
+    }
+
+    .menu-card .mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 13px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .menu-card strong {
+      display: block;
+      font-size: 18px;
+      line-height: 1.2;
+    }
+
+    .menu-card span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .blue { background: var(--blue); }
+    .green { background: var(--green); }
+    .orange { background: var(--orange); }
+    .red { background: var(--red); }
+    .purple { background: var(--purple); }
+    .gray { background: #8e8e93; }
+
+    .card {
+      margin: 12px 0;
       overflow: hidden;
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
     }
 
     .card-head {
-      padding: 16px 16px 8px;
+      padding: 15px 15px 8px;
+      border-bottom: 1px solid transparent;
     }
 
     .card-head h2 {
       margin: 0;
       font-size: 18px;
       line-height: 1.25;
-      letter-spacing: 0;
     }
 
     .card-head p {
@@ -117,31 +271,8 @@
       line-height: 1.4;
     }
 
-    .section {
-      padding: 10px 16px 18px;
-    }
-
-    .template-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .template-grid button,
-    .small-btn,
-    .action-btn {
-      min-height: 46px;
-      border-radius: 14px;
-      background: #f2f2f7;
-      color: var(--text);
-      font-weight: 700;
-      font-size: 15px;
-    }
-
-    .template-grid button.active {
-      background: #e5f1ff;
-      color: var(--blue-dark);
-      box-shadow: inset 0 0 0 1px rgba(0, 122, 255, 0.28);
+    .card-body {
+      padding: 12px 15px 16px;
     }
 
     .fields {
@@ -154,7 +285,7 @@
       gap: 7px;
     }
 
-    .field-row {
+    .row {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 10px;
@@ -163,7 +294,7 @@
     label {
       color: var(--muted);
       font-size: 13px;
-      font-weight: 650;
+      font-weight: 700;
       line-height: 1.2;
     }
 
@@ -173,17 +304,16 @@
       width: 100%;
       border: 1px solid var(--line);
       border-radius: 14px;
-      background: #fff;
+      background: var(--panel-solid);
       color: var(--text);
       outline: none;
       padding: 13px 13px;
       font-size: 16px;
       line-height: 1.3;
-      box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.02);
     }
 
     textarea {
-      min-height: 96px;
+      min-height: 74px;
       resize: vertical;
     }
 
@@ -191,110 +321,121 @@
     select:focus,
     textarea:focus {
       border-color: var(--blue);
-      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.14);
+      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.16);
     }
 
-    .suggestion {
+    .chips {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 1px 0 3px;
+      scrollbar-width: none;
+    }
+
+    .chips::-webkit-scrollbar {
+      display: none;
+    }
+
+    .chip {
+      flex: 0 0 auto;
+      min-height: 38px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: var(--soft);
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 750;
+      border: 1px solid transparent;
+    }
+
+    .chip.active {
+      background: rgba(0, 122, 255, 0.14);
+      color: var(--blue);
+      border-color: rgba(0, 122, 255, 0.28);
+    }
+
+    .preview {
       display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      align-items: center;
+      gap: 7px;
       padding: 12px;
-      border-radius: 16px;
-      background: #f2f8ff;
-      border: 1px solid rgba(0, 122, 255, 0.18);
+      border-radius: 8px;
+      background: rgba(0, 122, 255, 0.10);
+      border: 1px solid rgba(0, 122, 255, 0.22);
     }
 
-    .suggestion strong {
-      display: block;
-      font-size: 15px;
-      line-height: 1.3;
-      word-break: break-all;
-    }
-
-    .suggestion span {
-      display: block;
-      margin-top: 3px;
+    .preview small {
       color: var(--muted);
       font-size: 12px;
-      line-height: 1.35;
+      font-weight: 700;
     }
 
-    .small-btn {
-      min-width: 82px;
-      background: var(--blue);
-      color: #fff;
-      padding: 0 12px;
-    }
-
-    .photo-helper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-
-    .output {
-      display: grid;
-      gap: 10px;
-    }
-
-    .markdown-box {
-      min-height: 260px;
+    .preview code,
+    .mono {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
       font-size: 13px;
-      line-height: 1.5;
-      white-space: pre-wrap;
-    }
-
-    .export-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .export-grid .action-btn {
-      background: #fff;
-      border: 1px solid var(--line);
-      padding: 0 10px;
-    }
-
-    .export-grid .danger {
-      color: var(--red);
-    }
-
-    .search-line {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .history-list {
-      display: grid;
-      gap: 9px;
-      max-height: 360px;
-      overflow: auto;
-      padding-right: 2px;
-    }
-
-    .history-item {
-      width: 100%;
-      text-align: left;
-      padding: 12px;
-      border-radius: 15px;
-      background: #fff;
-      border: 1px solid var(--soft-line);
+      line-height: 1.45;
+      word-break: break-all;
       color: var(--text);
     }
 
-    .history-item strong {
+    .helper-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .btn,
+    .secondary,
+    .danger {
+      min-height: 46px;
+      padding: 0 14px;
+      border-radius: 14px;
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .btn {
+      background: var(--blue);
+      color: #fff;
+    }
+
+    .secondary {
+      background: var(--soft);
+      color: var(--text);
+      border: 1px solid var(--line);
+    }
+
+    .danger {
+      background: rgba(255, 59, 48, 0.12);
+      color: var(--red);
+      border: 1px solid rgba(255, 59, 48, 0.22);
+    }
+
+    .list {
+      display: grid;
+      gap: 10px;
+    }
+
+    .record-item,
+    .task-item {
+      width: 100%;
+      text-align: left;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--panel-solid);
+      border: 1px solid var(--line);
+      color: var(--text);
+    }
+
+    .record-item strong {
       display: block;
       font-size: 15px;
-      line-height: 1.3;
+      line-height: 1.35;
       word-break: break-word;
     }
 
-    .history-item span {
+    .record-item span {
       display: block;
       margin-top: 4px;
       color: var(--muted);
@@ -302,11 +443,67 @@
       line-height: 1.35;
     }
 
+    .task-item {
+      display: grid;
+      grid-template-columns: 34px 1fr auto;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .task-check {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid var(--line);
+      background: transparent;
+    }
+
+    .task-item.done .task-check {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .task-title {
+      min-width: 0;
+    }
+
+    .task-title strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    .task-title span {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+      margin-top: 3px;
+    }
+
+    .task-item.done .task-title {
+      opacity: 0.55;
+      text-decoration: line-through;
+    }
+
     .empty {
+      padding: 18px 10px;
       color: var(--muted);
       text-align: center;
-      padding: 18px 8px;
       font-size: 14px;
+    }
+
+    .filter-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .detail {
+      white-space: pre-wrap;
+      min-height: 210px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 13px;
+      line-height: 1.5;
     }
 
     .bottom-bar {
@@ -314,38 +511,58 @@
       left: 0;
       right: 0;
       bottom: 0;
-      z-index: 20;
+      z-index: 30;
       min-height: calc(var(--bar-h) + env(safe-area-inset-bottom));
       padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-      background: rgba(250, 250, 252, 0.92);
-      border-top: 1px solid rgba(210, 210, 215, 0.85);
+      background: rgba(245, 245, 247, 0.82);
+      border-top: 1px solid var(--line);
       backdrop-filter: blur(22px);
       -webkit-backdrop-filter: blur(22px);
     }
 
+    @media (prefers-color-scheme: dark) {
+      .bottom-bar {
+        background: rgba(16, 16, 18, 0.82);
+      }
+    }
+
     .bottom-inner {
-      width: min(100%, 780px);
+      width: min(100%, 860px);
       margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      gap: 10px;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 9px;
     }
 
-    .primary {
-      min-height: 56px;
+    .bar-btn {
+      min-height: 54px;
       border-radius: 16px;
-      color: #fff;
+      background: var(--soft);
+      color: var(--text);
+      font-weight: 850;
+      font-size: 15px;
+    }
+
+    .bar-btn.primary {
       background: var(--blue);
-      font-weight: 800;
-      font-size: 17px;
+      color: #fff;
     }
 
-    .primary.save {
+    .bar-btn.green {
       background: var(--green);
+      color: #fff;
     }
 
-    .primary.copy {
+    .bar-btn.dark {
       background: #1d1d1f;
+      color: #fff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      .bar-btn.dark {
+        background: #f5f5f7;
+        color: #1d1d1f;
+      }
     }
 
     .toast {
@@ -353,15 +570,15 @@
       left: 16px;
       right: 16px;
       bottom: calc(var(--bar-h) + 18px + env(safe-area-inset-bottom));
-      z-index: 30;
+      z-index: 40;
       margin: 0 auto;
-      width: min(calc(100% - 32px), 520px);
+      width: min(calc(100% - 32px), 540px);
       padding: 12px 14px;
       border-radius: 15px;
       background: rgba(29, 29, 31, 0.92);
       color: #fff;
       text-align: center;
-      font-weight: 700;
+      font-weight: 800;
       opacity: 0;
       transform: translateY(10px);
       pointer-events: none;
@@ -373,213 +590,445 @@
       transform: translateY(0);
     }
 
-    @media (max-width: 390px) {
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 430px) {
       .app {
         padding-left: 10px;
         padding-right: 10px;
       }
 
+      .topbar {
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+
       h1 {
-        font-size: 25px;
+        font-size: 27px;
       }
 
-      .section,
-      .card-head {
-        padding-left: 12px;
-        padding-right: 12px;
+      .menu-card {
+        min-height: 110px;
+        padding: 13px;
       }
 
-      .field-row,
-      .photo-helper,
-      .export-grid {
+      .row,
+      .filter-grid {
         grid-template-columns: 1fr;
-      }
-
-      .bottom-inner {
-        gap: 8px;
-      }
-
-      .primary {
-        font-size: 16px;
-        min-height: 54px;
       }
     }
   </style>
 </head>
 <body>
-  <main class="app">
-    <header>
-      <p class="eyebrow">Micro/Nano Lab Card</p>
-      <h1>iPhone 实验记录卡 Pro</h1>
-      <p class="subtitle">快速记录加工、SEM、光学测试、GDS/仿真和问题复盘，并生成可复制到 Obsidian 的 Markdown。</p>
-    </header>
+  <nav class="topbar">
+    <div class="top-inner">
+      <button class="icon-btn" id="backBtn" type="button" aria-label="返回">‹</button>
+      <div class="top-title">
+        <strong id="navTitle">实验记录卡</strong>
+        <span id="navSub">微纳加工 · SEM · 样品追踪</span>
+      </div>
+      <button class="icon-btn" id="homeBtn" type="button" aria-label="首页">⌂</button>
+    </div>
+  </nav>
 
-    <section class="card">
-      <div class="card-head">
-        <h2>快捷模板</h2>
-        <p>点一下先填好记录类型和提示语，再补充现场数据。</p>
+  <main class="app">
+    <section class="view active" id="view-home" data-title="实验记录卡" data-subtitle="微纳加工 · SEM · 样品追踪">
+      <div class="hero">
+        <p class="eyebrow">Lab Database Seed</p>
+        <h1>微纳加工与 SEM 记录</h1>
+        <p class="sub">从现场短句记录开始，自动生成样品编号、SEM 文件名、JSON 数据和 Obsidian Markdown。</p>
       </div>
-      <div class="section">
-        <div class="template-grid" id="templateGrid">
-          <button type="button" data-template="process">加工</button>
-          <button type="button" data-template="sem">SEM</button>
-          <button type="button" data-template="optical">光学测试</button>
-          <button type="button" data-template="gds">GDS/仿真</button>
-          <button type="button" data-template="review">问题复盘</button>
+
+      <div class="grid-menu">
+        <button class="menu-card" type="button" data-go="fabrication">
+          <span class="mark blue">工</span>
+          <span><strong>加工记录</strong><span>EBL / ICP / RIE / 异常</span></span>
+        </button>
+        <button class="menu-card" type="button" data-go="sem">
+          <span class="mark green">SEM</span>
+          <span><strong>SEM记录</strong><span>连拍编号 / 文件名 / 判断</span></span>
+        </button>
+        <button class="menu-card" type="button" data-go="optical">
+          <span class="mark orange">光</span>
+          <span><strong>光学测试</strong><span>后续扩展入口</span></span>
+        </button>
+        <button class="menu-card" type="button" data-go="gds">
+          <span class="mark purple">GDS</span>
+          <span><strong>GDS/仿真</strong><span>版图与仿真入口</span></span>
+        </button>
+        <button class="menu-card" type="button" data-go="review">
+          <span class="mark red">复</span>
+          <span><strong>问题复盘</strong><span>失败原因与下一轮</span></span>
+        </button>
+        <button class="menu-card" type="button" data-go="todos">
+          <span class="mark gray">✓</span>
+          <span><strong>今日待办</strong><span>加工 / SEM / 分析清单</span></span>
+        </button>
+        <button class="menu-card" type="button" data-go="history">
+          <span class="mark blue">库</span>
+          <span><strong>历史记录</strong><span>搜索 / 筛选 / 导出</span></span>
+        </button>
+      </div>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>编号解析</h2>
+          <p>粘贴已有样品或 SEM 文件名，自动拆解字段。</p>
         </div>
-      </div>
+        <div class="card-body fields">
+          <div class="field">
+            <label for="parseInput">已有编号</label>
+            <input id="parseInput" placeholder="B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70__003">
+          </div>
+          <button class="btn" type="button" id="parseBtn">拆解编号</button>
+          <pre class="preview mono" id="parseOutput">等待输入</pre>
+        </div>
+      </section>
     </section>
 
-    <section class="card">
-      <div class="card-head">
-        <h2>记录信息</h2>
-        <p>样品编号会根据项目、批次、日期、GDS 版本和样品号自动建议。</p>
-      </div>
-      <div class="section fields">
-        <div class="field-row">
+    <section class="view" id="view-fabrication" data-title="加工记录" data-subtitle="超净间 · EBL · ICP · RIE">
+      <section class="card">
+        <div class="card-head">
+          <h2>样品编号</h2>
+          <p>规则来自当前实验报告：批次、日期、基底、图案、EBL、ICP、RIE、样品、阵列和剂量。</p>
+        </div>
+        <div class="card-body fields" id="fabForm">
+          <div class="row">
+            <div class="field">
+              <label for="fab_batch">批次</label>
+              <input id="fab_batch" data-fab="batch" placeholder="B16">
+            </div>
+            <div class="field">
+              <label for="fab_date">日期</label>
+              <input id="fab_date" data-fab="date" type="date">
+            </div>
+          </div>
+
           <div class="field">
-            <label for="recordType">记录类型</label>
-            <select id="recordType">
-              <option>加工</option>
-              <option>SEM</option>
-              <option>光学测试</option>
-              <option>GDS/仿真</option>
-              <option>问题复盘</option>
+            <label>基底类型</label>
+            <div class="chips" data-chip-group="fab_substrate">
+              <button class="chip" type="button" data-value="SOI">SOI</button>
+              <button class="chip" type="button" data-value="Si">Si</button>
+            </div>
+            <input id="fab_substrate" data-fab="substrate" class="hidden">
+          </div>
+
+          <div class="field">
+            <label>图案类型</label>
+            <div class="chips" data-chip-group="fab_pattern">
+              <button class="chip" type="button" data-value="DicFig2">DicFig2</button>
+              <button class="chip" type="button" data-value="Dirac">Dirac</button>
+              <button class="chip" type="button" data-value="Disclination">Disclination</button>
+              <button class="chip" type="button" data-value="Other">Other</button>
+            </div>
+            <input id="fab_pattern" data-fab="pattern" class="hidden">
+          </div>
+
+          <div class="field">
+            <label>EBL模式</label>
+            <div class="chips" data-chip-group="fab_ebl_mode">
+              <button class="chip" type="button" data-value="EBL3">EBL3</button>
+              <button class="chip" type="button" data-value="EBL6">EBL6</button>
+            </div>
+            <input id="fab_ebl_mode" data-fab="ebl_mode" class="hidden">
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="fab_icp_time">ICP时间</label>
+              <input id="fab_icp_time" data-fab="icp_time" placeholder="90S">
+            </div>
+            <div class="field">
+              <label for="fab_rie_time">RIE时间</label>
+              <input id="fab_rie_time" data-fab="rie_time" placeholder="4min">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="fab_sample">样品编号</label>
+              <input id="fab_sample" data-fab="sample" placeholder="S1">
+            </div>
+            <div class="field">
+              <label for="fab_array">阵列编号</label>
+              <input id="fab_array" data-fab="array" placeholder="P2">
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="fab_dose">剂量</label>
+            <input id="fab_dose" data-fab="dose" placeholder="S70">
+          </div>
+
+          <div class="preview">
+            <small>样品编号预览</small>
+            <code id="fabPreview">B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70</code>
+          </div>
+
+          <div class="field">
+            <label for="fab_operation">今天做了什么</label>
+            <input id="fab_operation" data-fab="operation" placeholder="完成 EBL 曝光、ICP 90S、RIE 去胶">
+          </div>
+          <div class="field">
+            <label for="fab_observation">观察结果</label>
+            <input id="fab_observation" data-fab="observation" placeholder="绿光显微镜下阵列完整，待 SEM 确认孔径">
+          </div>
+          <div class="field">
+            <label for="fab_abnormal_note">现场异常</label>
+            <input id="fab_abnormal_note" data-fab="abnormal_note" placeholder="例如残胶、过曝、刻蚀副产物、对焦漂移">
+          </div>
+          <div class="field">
+            <label for="fab_next_step">下一步</label>
+            <input id="fab_next_step" data-fab="next_step" placeholder="拍 SEM，检查侧壁和孔径；必要时 RIE 去胶后复拍">
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="fab_photo_start">起始照片编号</label>
+              <input id="fab_photo_start" data-fab="photo_start" inputmode="numeric" placeholder="2381">
+            </div>
+            <div class="field">
+              <label for="fab_photo_end">结束照片编号</label>
+              <input id="fab_photo_end" data-fab="photo_end" inputmode="numeric" placeholder="2388">
+            </div>
+          </div>
+          <div class="field">
+            <label for="fab_photo_note">照片说明</label>
+            <input id="fab_photo_note" data-fab="photo_note" placeholder="显微镜总览、工艺后样品盒照片">
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="view" id="view-sem" data-title="SEM记录" data-subtitle="连续拍摄 · 自动编号">
+      <section class="card">
+        <div class="card-head">
+          <h2>SEM 文件名</h2>
+          <p>选择已有样品或手动输入样品编号；下一张会自动把 001 变成 002。</p>
+        </div>
+        <div class="card-body fields" id="semForm">
+          <div class="field">
+            <label for="sem_sample_select">选择已有样品</label>
+            <select id="sem_sample_select">
+              <option value="">手动输入或从历史选择</option>
             </select>
           </div>
           <div class="field">
-            <label for="operator">操作者</label>
-            <input id="operator" autocomplete="name" placeholder="例如：MJ">
+            <label for="sem_sample_id">样品编号</label>
+            <input id="sem_sample_id" data-sem="sample_id" placeholder="B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70">
           </div>
-        </div>
+          <div class="helper-grid">
+            <div class="field">
+              <label for="sem_index">SEM图片编号</label>
+              <input id="sem_index" data-sem="sem_index" inputmode="numeric" placeholder="001">
+            </div>
+            <button class="secondary" type="button" id="nextSemBtn">下一张</button>
+          </div>
+          <div class="preview">
+            <small>SEM 图片文件名</small>
+            <code id="semPreview">B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70__001</code>
+          </div>
 
-        <div class="field">
-          <label for="project">项目名</label>
-          <input id="project" autocomplete="off" placeholder="例如：DV-DIS 或 Disclination Vortex">
-        </div>
-
-        <div class="field-row">
+          <div class="row">
+            <div class="field">
+              <label for="sem_magnification">放大倍率</label>
+              <input id="sem_magnification" data-sem="magnification" placeholder="5k / 20k / 50k">
+            </div>
+            <div class="field">
+              <label for="sem_voltage">加速电压</label>
+              <input id="sem_voltage" data-sem="voltage" placeholder="5 kV">
+            </div>
+          </div>
+          <div class="row">
+            <div class="field">
+              <label for="sem_wd">工作距离</label>
+              <input id="sem_wd" data-sem="working_distance" placeholder="5 mm">
+            </div>
+            <div class="field">
+              <label for="sem_area">拍摄区域</label>
+              <input id="sem_area" data-sem="area" placeholder="P2 中心 / 边缘 / 截面">
+            </div>
+          </div>
           <div class="field">
-            <label for="batch">批次号</label>
-            <input id="batch" inputmode="text" autocomplete="off" placeholder="例如：B15 或 15">
+            <label for="sem_observation">图片说明 / 观察结果</label>
+            <input id="sem_observation" data-sem="observation" placeholder="孔阵列完整，边缘略粗糙，疑似残胶薄膜">
           </div>
           <div class="field">
-            <label for="sampleNo">样品号</label>
-            <input id="sampleNo" inputmode="text" autocomplete="off" placeholder="例如：S1 或 1">
-          </div>
-        </div>
-
-        <div class="field-row">
-          <div class="field">
-            <label for="gdsVersion">GDS 版本</label>
-            <input id="gdsVersion" inputmode="text" autocomplete="off" placeholder="例如：G03 或 3">
+            <label>是否异常</label>
+            <div class="chips" data-chip-group="sem_abnormal">
+              <button class="chip" type="button" data-value="否">否</button>
+              <button class="chip" type="button" data-value="是">是</button>
+            </div>
+            <input id="sem_abnormal" data-sem="abnormal" class="hidden">
           </div>
           <div class="field">
-            <label for="sampleId">样品编号</label>
-            <input id="sampleId" autocomplete="off" placeholder="DV-DIS-B15-0527-G03-S1">
+            <label>是否需要重加工</label>
+            <div class="chips" data-chip-group="sem_need_rework">
+              <button class="chip" type="button" data-value="否">否</button>
+              <button class="chip" type="button" data-value="是">是</button>
+              <button class="chip" type="button" data-value="待判断">待判断</button>
+            </div>
+            <input id="sem_need_rework" data-sem="need_rework" class="hidden">
+          </div>
+          <div class="field">
+            <label for="sem_next_step">下一步</label>
+            <input id="sem_next_step" data-sem="next_step" placeholder="继续拍 P3；或 RIE 去胶后复拍；或进入光学测试">
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="sem_photo_start">起始照片编号</label>
+              <input id="sem_photo_start" data-sem="photo_start" inputmode="numeric" placeholder="2381">
+            </div>
+            <div class="field">
+              <label for="sem_photo_end">结束照片编号</label>
+              <input id="sem_photo_end" data-sem="photo_end" inputmode="numeric" placeholder="2388">
+            </div>
+          </div>
+          <div class="field">
+            <label for="sem_photo_note">照片说明</label>
+            <input id="sem_photo_note" data-sem="photo_note" placeholder="iPhone 拍屏或导出图片范围说明">
           </div>
         </div>
-
-        <div class="suggestion">
-          <div>
-            <strong id="sampleSuggestion">DV-DIS-B15-0527-G03-S1</strong>
-            <span>适合 SEM 图片命名，也方便反查 GDS、Python、COMSOL 和实验记录。</span>
-          </div>
-          <button class="small-btn" type="button" id="useSuggestion">使用</button>
-        </div>
-
-        <div class="field">
-          <label for="device">设备/地点</label>
-          <input id="device" autocomplete="off" placeholder="例如：SEM，5 kV，WD 5 mm；或光学台/COMSOL">
-        </div>
-
-        <div class="field">
-          <label for="today">今天做了什么</label>
-          <textarea id="today" placeholder="写清楚具体动作，例如曝光、显影、刻蚀、拍 SEM、扫谱、改 GDS 参数。"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="params">关键参数</label>
-          <textarea id="params" placeholder="剂量、时间、功率、气体流量、倍率、加速电压、波长范围、仿真参数等。"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="observations">看到的现象</label>
-          <textarea id="observations" placeholder="图形完整性、线宽、塌陷、残胶、峰位、Q 值、模式分布等。"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="anomalies">不确定/异常</label>
-          <textarea id="anomalies" placeholder="记录任何不确定、异常、可能误差和需要复查的地方。"></textarea>
-        </div>
-
-        <div class="field">
-          <label for="nextStep">下一步</label>
-          <textarea id="nextStep" placeholder="下一步加工、复测、补拍、改版、仿真或排查动作。"></textarea>
-        </div>
-      </div>
+      </section>
     </section>
 
-    <section class="card">
-      <div class="card-head">
-        <h2>照片/文件编号</h2>
-        <p>输入起止编号会自动生成类似 IMG_2381-IMG_2388。</p>
-      </div>
-      <div class="section fields">
-        <div class="photo-helper">
-          <div class="field">
-            <label for="photoStart">起始照片编号</label>
-            <input id="photoStart" inputmode="numeric" pattern="[0-9]*" placeholder="2381">
-          </div>
-          <div class="field">
-            <label for="photoEnd">结束照片编号</label>
-            <input id="photoEnd" inputmode="numeric" pattern="[0-9]*" placeholder="2388">
-          </div>
+    <section class="view" id="view-todos" data-title="今日待办" data-subtitle="Apple Reminders 风格">
+      <section class="card">
+        <div class="card-head">
+          <h2>今日实验任务</h2>
+          <p>任务会自动保存在本机浏览器。</p>
         </div>
-        <div class="field">
-          <label for="photoFile">照片/文件编号</label>
-          <input id="photoFile" autocomplete="off" placeholder="IMG_2381-IMG_2388；或 GDS 文件名、COMSOL 文件名">
+        <div class="card-body fields">
+          <div class="row">
+            <div class="field">
+              <label for="todoType">任务类型</label>
+              <select id="todoType">
+                <option>待加工</option>
+                <option>待SEM</option>
+                <option>待光测</option>
+                <option>待分析</option>
+                <option>待复盘</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="todoSample">样品</label>
+              <input id="todoSample" placeholder="B16 / S1 / P2">
+            </div>
+          </div>
+          <div class="helper-grid">
+            <div class="field">
+              <label for="todoText">任务内容</label>
+              <input id="todoText" placeholder="例如 P2 拍 SEM 低倍总览和 50k 局部">
+            </div>
+            <button class="btn" type="button" id="addTodoBtn">新增</button>
+          </div>
+          <div class="list" id="todoList"></div>
         </div>
-      </div>
+      </section>
     </section>
 
-    <section class="card">
-      <div class="card-head">
-        <h2>Markdown 输出</h2>
-        <p>生成后可复制到 Obsidian，也可以导出为 Markdown 文件。</p>
-      </div>
-      <div class="section output">
-        <textarea id="markdownOutput" class="markdown-box" readonly placeholder="点击底部“生成”后，这里会出现 Markdown。"></textarea>
-        <div class="export-grid">
-          <button class="action-btn" type="button" id="exportCurrent">导出当前 .md</button>
-          <button class="action-btn" type="button" id="exportAllMd">导出全部 .md</button>
-          <button class="action-btn" type="button" id="exportJson">导出 JSON 备份</button>
-          <button class="action-btn danger" type="button" id="clearRecords">清空本机记录</button>
+    <section class="view" id="view-history" data-title="历史记录" data-subtitle="搜索 · 筛选 · 导出">
+      <section class="card">
+        <div class="card-head">
+          <h2>搜索和筛选</h2>
+          <p>按批次、日期、样品、图案、工艺参数、异常和记录类型筛选。</p>
         </div>
-      </div>
+        <div class="card-body fields">
+          <div class="field">
+            <label for="histSearch">关键词</label>
+            <input id="histSearch" placeholder="样品 / 设备 / 异常 / 文件名">
+          </div>
+          <div class="filter-grid">
+            <input id="filter_batch" placeholder="批次 B16">
+            <input id="filter_date" placeholder="日期 20260522">
+            <input id="filter_sample" placeholder="样品 S1">
+            <input id="filter_pattern" placeholder="图案 DicFig2">
+            <input id="filter_ebl" placeholder="EBL3">
+            <input id="filter_icp" placeholder="ICP90S">
+            <input id="filter_rie" placeholder="RIE4min">
+            <input id="filter_dose" placeholder="S70">
+            <input id="filter_sem" placeholder="SEM 003">
+            <select id="filter_abnormal">
+              <option value="">是否异常</option>
+              <option>是</option>
+              <option>否</option>
+            </select>
+            <select id="filter_type">
+              <option value="">记录类型</option>
+              <option value="加工记录">加工记录</option>
+              <option value="SEM记录">SEM记录</option>
+              <option value="光学测试">光学测试</option>
+              <option value="GDS/仿真">GDS/仿真</option>
+              <option value="问题复盘">问题复盘</option>
+            </select>
+          </div>
+          <button class="secondary" type="button" id="clearFiltersBtn">清除筛选</button>
+          <div class="list" id="historyList"></div>
+        </div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>记录详情</h2>
+          <p>点击历史记录后可复制或导出当前 Markdown。</p>
+        </div>
+        <div class="card-body fields">
+          <textarea class="detail" id="detailMarkdown" readonly placeholder="选择一条历史记录"></textarea>
+          <div class="row">
+            <button class="secondary" type="button" id="copyDetailBtn">复制 Markdown</button>
+            <button class="secondary" type="button" id="exportDetailBtn">导出当前 .md</button>
+          </div>
+          <div class="row">
+            <button class="secondary" type="button" id="exportAllMdBtn">导出全部 .md</button>
+            <button class="secondary" type="button" id="exportJsonBtn">导出 JSON 备份</button>
+          </div>
+          <button class="danger" type="button" id="clearRecordsBtn">清空本机记录</button>
+        </div>
+      </section>
     </section>
 
-    <section class="card">
-      <div class="card-head">
-        <h2>最近记录</h2>
-        <p>保存在本机浏览器 localStorage 里，可搜索样品编号、设备、批次和异常关键词。</p>
-      </div>
-      <div class="section output">
-        <div class="search-line">
-          <input id="historySearch" autocomplete="off" placeholder="搜索样品/设备/批次/异常">
-          <button class="small-btn" type="button" id="clearSearch">清除</button>
+    <section class="view" id="view-optical" data-title="光学测试" data-subtitle="后续扩展入口">
+      <section class="card">
+        <div class="card-head">
+          <h2>光学测试入口</h2>
+          <p>当前版本先保留入口。建议后续加入峰位、Q 值、功率、偏振、近场和远场记录。</p>
         </div>
-        <div class="history-list" id="historyList"></div>
-      </div>
+        <div class="card-body">
+          <button class="btn" type="button" data-go="history">查看已有样品</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="view" id="view-gds" data-title="GDS/仿真" data-subtitle="后续扩展入口">
+      <section class="card">
+        <div class="card-head">
+          <h2>GDS/仿真入口</h2>
+          <p>当前版本先保留入口。建议后续加入 GDS 文件、Python 脚本、COMSOL 参数和版图预览。</p>
+        </div>
+        <div class="card-body">
+          <button class="btn" type="button" data-go="history">查看样品追踪</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="view" id="view-review" data-title="问题复盘" data-subtitle="后续扩展入口">
+      <section class="card">
+        <div class="card-head">
+          <h2>问题复盘入口</h2>
+          <p>当前版本先保留入口。建议后续加入失败原因、根因判断、复现实验和下一轮参数。</p>
+        </div>
+        <div class="card-body">
+          <button class="btn" type="button" data-go="history">查看异常记录</button>
+        </div>
+      </section>
     </section>
   </main>
 
-  <nav class="bottom-bar" aria-label="固定操作栏">
-    <div class="bottom-inner">
-      <button class="primary" type="button" id="generateBtn">生成</button>
-      <button class="primary save" type="button" id="saveBtn">保存</button>
-      <button class="primary copy" type="button" id="copyBtn">复制</button>
-    </div>
+  <nav class="bottom-bar">
+    <div class="bottom-inner" id="bottomActions"></div>
   </nav>
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -588,513 +1037,700 @@
     (function () {
       "use strict";
 
-      var STORAGE_KEY = "lab_record_card_pro_records_v1";
-      var MAX_RECORDS = 200;
-      var sampleWasEdited = false;
-      var activeTemplate = "";
+      var STORE_RECORDS = "lab_db_records_v2";
+      var STORE_TODOS = "lab_db_todos_v2";
+      var STORE_DRAFTS = "lab_db_drafts_v2";
+      var currentView = "home";
+      var selectedRecordId = "";
 
-      var templates = {
-        process: {
-          label: "加工",
-          device: "设备/地点：EBL / ICP-RIE / PECVD / 显影台 / 清洗台；请补充房间、机台编号。",
-          params: "关键参数：剂量、曝光电流、显影液和时间、刻蚀气体/流量/功率/压力/时间、膜厚、温度。",
-          observations: "看到的现象：图形是否完整、线宽/孔径、残胶、塌陷、过刻/欠刻、污染、对准情况。",
-          nextStep: "下一步：补拍 SEM、测膜厚、调整剂量/刻蚀时间、清洗、进入下一道工艺。"
-        },
-        sem: {
-          label: "SEM",
-          device: "设备/地点：SEM；请补充加速电压、工作距离、探测器、倍率、样品台位置。",
-          params: "关键参数：kV、WD、倍率、spot size、tilt、是否喷金、拍摄区域、文件编号。",
-          observations: "看到的现象：结构完整性、线宽、孔径、倒塌、残胶、颗粒、边缘粗糙、局部异常。",
-          nextStep: "下一步：补拍关键区域、量尺寸、与 GDS/仿真对照、决定是否返工或进入测试。"
-        },
-        optical: {
-          label: "光学测试",
-          device: "设备/地点：光学台；请补充激光器、物镜、光谱仪、偏振、探测器、耦合方式。",
-          params: "关键参数：波长范围、功率、积分时间、狭缝、偏振、扫描步长、温度、样品位置。",
-          observations: "看到的现象：峰位、Q 值、透射/反射变化、背景、漂移、耦合强弱、重复性。",
-          nextStep: "下一步：换位置复测、调偏振/功率、拟合谱线、对照 SEM 和仿真。"
-        },
-        gds: {
-          label: "GDS/仿真",
-          device: "设备/地点：Python / KLayout / COMSOL / Lumerical；请补充脚本、工程文件和输出目录。",
-          params: "关键参数：GDS 版本、晶格常数、半径、gap、层名、网格、边界条件、材料参数、扫描范围。",
-          observations: "看到的现象：版图是否闭合、层是否正确、模式分布、频率/波长、收敛情况、异常结构。",
-          nextStep: "下一步：导出 GDS、生成预览图、跑参数扫描、把版本号写入样品编号。"
-        },
-        review: {
-          label: "问题复盘",
-          device: "设备/地点：问题发生的设备、软件、样品位置或数据目录。",
-          params: "关键参数：问题发生前后的参数、版本、文件、时间点、操作顺序。",
-          observations: "看到的现象：错误表现、失败位置、与预期差异、是否可复现、影响哪些样品。",
-          nextStep: "下一步：最小复现实验、补充对照、修改参数、重新命名文件、更新 SOP。"
-        }
+      var defaultFab = {
+        batch: "B16",
+        date: todayDash(),
+        substrate: "SOI",
+        pattern: "DicFig2",
+        ebl_mode: "EBL3",
+        icp_time: "90S",
+        rie_time: "4min",
+        sample: "S1",
+        array: "P2",
+        dose: "S70",
+        operation: "",
+        observation: "",
+        abnormal_note: "",
+        next_step: "",
+        photo_start: "",
+        photo_end: "",
+        photo_note: ""
       };
 
-      var fields = {
-        recordType: byId("recordType"),
-        sampleId: byId("sampleId"),
-        project: byId("project"),
-        batch: byId("batch"),
-        sampleNo: byId("sampleNo"),
-        gdsVersion: byId("gdsVersion"),
-        device: byId("device"),
-        operator: byId("operator"),
-        today: byId("today"),
-        params: byId("params"),
-        observations: byId("observations"),
-        anomalies: byId("anomalies"),
-        nextStep: byId("nextStep"),
-        photoFile: byId("photoFile"),
-        photoStart: byId("photoStart"),
-        photoEnd: byId("photoEnd")
+      var defaultSem = {
+        sample_id: "",
+        sem_index: "001",
+        magnification: "",
+        voltage: "5 kV",
+        working_distance: "5 mm",
+        area: "",
+        observation: "",
+        abnormal: "否",
+        need_rework: "否",
+        next_step: "",
+        photo_start: "",
+        photo_end: "",
+        photo_note: ""
       };
-
-      var output = byId("markdownOutput");
-      var suggestionEl = byId("sampleSuggestion");
-      var historyList = byId("historyList");
-      var searchInput = byId("historySearch");
-      var toastEl = byId("toast");
 
       init();
 
       function init() {
-        bindEvents();
-        loadDraft();
-        updatePhotoRange();
-        updateSampleSuggestion();
+        loadDraft("fab", defaultFab);
+        loadDraft("sem", defaultSem);
+        bindNavigation();
+        bindChipGroups();
+        bindFab();
+        bindSem();
+        bindTodos();
+        bindHistory();
+        updateFabPreview();
+        updateSemSampleOptions();
+        updateSemPreview();
+        renderTodos();
         renderHistory();
+        showView("home");
       }
 
-      function bindEvents() {
-        byId("templateGrid").addEventListener("click", function (event) {
-          var button = event.target.closest("button[data-template]");
-          if (!button) return;
-          applyTemplate(button.getAttribute("data-template"));
+      function bindNavigation() {
+        document.body.addEventListener("click", function (event) {
+          var go = event.target.closest("[data-go]");
+          if (go) showView(go.getAttribute("data-go"));
         });
+        byId("backBtn").addEventListener("click", function () { showView("home"); });
+        byId("homeBtn").addEventListener("click", function () { showView("home"); });
+        byId("parseBtn").addEventListener("click", parseHomeInput);
+      }
 
-        byId("useSuggestion").addEventListener("click", function () {
-          fields.sampleId.value = suggestionEl.textContent;
-          sampleWasEdited = true;
-          saveDraft();
-          showToast("已使用建议样品编号");
+      function showView(name) {
+        currentView = name;
+        Array.prototype.forEach.call(document.querySelectorAll(".view"), function (view) {
+          view.classList.toggle("active", view.id === "view-" + name);
         });
+        var active = byId("view-" + name);
+        byId("navTitle").textContent = active.getAttribute("data-title") || "实验记录卡";
+        byId("navSub").textContent = active.getAttribute("data-subtitle") || "";
+        byId("backBtn").classList.toggle("hidden", name === "home");
+        renderActions();
+        if (name === "history") renderHistory();
+        if (name === "sem") updateSemSampleOptions();
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
 
-        byId("generateBtn").addEventListener("click", function () {
-          output.value = buildMarkdown();
-          saveDraft();
-          showToast("Markdown 已生成");
+      function renderActions() {
+        var actions = byId("bottomActions");
+        actions.innerHTML = "";
+        var config = {
+          home: [
+            ["加工", "primary", function () { showView("fabrication"); }],
+            ["SEM", "green", function () { showView("sem"); }],
+            ["历史", "dark", function () { showView("history"); }]
+          ],
+          fabrication: [
+            ["预览", "", function () { copyText(buildMarkdown(buildFabRecord(false))); }],
+            ["保存", "green", saveFabRecord],
+            ["历史", "dark", function () { showView("history"); }]
+          ],
+          sem: [
+            ["下一张", "", nextSem],
+            ["保存", "green", saveSemRecord],
+            ["历史", "dark", function () { showView("history"); }]
+          ],
+          todos: [
+            ["新增", "primary", addTodo],
+            ["历史", "dark", function () { showView("history"); }],
+            ["首页", "", function () { showView("home"); }]
+          ],
+          history: [
+            ["复制", "", copySelectedMarkdown],
+            ["导出", "primary", exportSelectedMarkdown],
+            ["JSON", "dark", exportJson]
+          ],
+          optical: [
+            ["首页", "", function () { showView("home"); }],
+            ["历史", "dark", function () { showView("history"); }],
+            ["SEM", "green", function () { showView("sem"); }]
+          ],
+          gds: [
+            ["首页", "", function () { showView("home"); }],
+            ["加工", "primary", function () { showView("fabrication"); }],
+            ["历史", "dark", function () { showView("history"); }]
+          ],
+          review: [
+            ["首页", "", function () { showView("home"); }],
+            ["历史", "dark", function () { showView("history"); }],
+            ["待办", "primary", function () { showView("todos"); }]
+          ]
+        }[currentView] || [];
+
+        config.forEach(function (item) {
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "bar-btn " + item[1];
+          btn.textContent = item[0];
+          btn.addEventListener("click", item[2]);
+          actions.appendChild(btn);
         });
+      }
 
-        byId("saveBtn").addEventListener("click", function () {
-          saveRecord();
+      function bindChipGroups() {
+        document.body.addEventListener("click", function (event) {
+          var chip = event.target.closest(".chip[data-value]");
+          if (!chip) return;
+          var group = chip.parentElement.getAttribute("data-chip-group");
+          var hidden = byId(group);
+          hidden.value = chip.getAttribute("data-value");
+          Array.prototype.forEach.call(chip.parentElement.children, function (item) {
+            item.classList.toggle("active", item === chip);
+          });
+          if (group.indexOf("fab_") === 0) {
+            saveDraft("fab", collectForm("fab"));
+            updateFabPreview();
+          }
+          if (group.indexOf("sem_") === 0) {
+            saveDraft("sem", collectForm("sem"));
+          }
         });
+      }
 
-        byId("copyBtn").addEventListener("click", function () {
-          copyMarkdown();
+      function setChip(group, value) {
+        var hidden = byId(group);
+        if (!hidden) return;
+        hidden.value = value || "";
+        var wrap = document.querySelector('[data-chip-group="' + group + '"]');
+        if (!wrap) return;
+        Array.prototype.forEach.call(wrap.children, function (chip) {
+          chip.classList.toggle("active", chip.getAttribute("data-value") === hidden.value);
         });
+      }
 
-        byId("exportCurrent").addEventListener("click", exportCurrentMd);
-        byId("exportAllMd").addEventListener("click", exportAllMarkdown);
-        byId("exportJson").addEventListener("click", exportJsonBackup);
-        byId("clearRecords").addEventListener("click", clearRecords);
-        byId("clearSearch").addEventListener("click", function () {
-          searchInput.value = "";
-          renderHistory();
-        });
-
-        searchInput.addEventListener("input", renderHistory);
-
-        ["project", "batch", "sampleNo", "gdsVersion"].forEach(function (name) {
-          fields[name].addEventListener("input", function () {
-            updateSampleSuggestion();
-            saveDraft();
+      function bindFab() {
+        Array.prototype.forEach.call(document.querySelectorAll("[data-fab]"), function (el) {
+          el.addEventListener("input", function () {
+            saveDraft("fab", collectForm("fab"));
+            updateFabPreview();
+          });
+          el.addEventListener("change", function () {
+            saveDraft("fab", collectForm("fab"));
+            updateFabPreview();
           });
         });
+      }
 
-        fields.sampleId.addEventListener("input", function () {
-          sampleWasEdited = fields.sampleId.value.trim().length > 0;
-          saveDraft();
-        });
-
-        ["photoStart", "photoEnd"].forEach(function (name) {
-          fields[name].addEventListener("input", function () {
-            updatePhotoRange();
-            saveDraft();
+      function bindSem() {
+        Array.prototype.forEach.call(document.querySelectorAll("[data-sem]"), function (el) {
+          el.addEventListener("input", function () {
+            saveDraft("sem", collectForm("sem"));
+            updateSemPreview();
+          });
+          el.addEventListener("change", function () {
+            saveDraft("sem", collectForm("sem"));
+            updateSemPreview();
           });
         });
-
-        Object.keys(fields).forEach(function (name) {
-          fields[name].addEventListener("change", saveDraft);
-          fields[name].addEventListener("blur", saveDraft);
+        byId("nextSemBtn").addEventListener("click", nextSem);
+        byId("sem_sample_select").addEventListener("change", function () {
+          if (!this.value) return;
+          byId("sem_sample_id").value = this.value;
+          var parsed = parseSampleId(this.value);
+          if (parsed) {
+            mergeParsedIntoSem(parsed);
+          }
+          saveDraft("sem", collectForm("sem"));
+          updateSemPreview();
         });
       }
 
-      function applyTemplate(key) {
-        var item = templates[key];
-        if (!item) return;
-        activeTemplate = key;
-        fields.recordType.value = item.label;
-        if (!fields.device.value.trim()) fields.device.value = item.device;
-        if (!fields.params.value.trim()) fields.params.value = item.params;
-        if (!fields.observations.value.trim()) fields.observations.value = item.observations;
-        if (!fields.nextStep.value.trim()) fields.nextStep.value = item.nextStep;
-
-        Array.prototype.forEach.call(document.querySelectorAll("[data-template]"), function (btn) {
-          btn.classList.toggle("active", btn.getAttribute("data-template") === key);
-        });
-
-        saveDraft();
-        showToast("已套用：" + item.label);
-      }
-
-      function updateSampleSuggestion() {
-        var sample = makeSampleId();
-        suggestionEl.textContent = sample;
-        if (!sampleWasEdited || !fields.sampleId.value.trim()) {
-          fields.sampleId.value = sample;
-          sampleWasEdited = false;
-        }
-      }
-
-      function makeSampleId() {
-        var parts = [
-          projectCode(fields.project.value),
-          batchCode(fields.batch.value),
-          todayCode(),
-          gdsCode(fields.gdsVersion.value),
-          sampleCode(fields.sampleNo.value)
-        ];
-        return parts.filter(Boolean).join("-");
-      }
-
-      function projectCode(value) {
-        var raw = (value || "").trim();
-        if (!raw) return "DV-DIS";
-        var cleaned = raw
-          .replace(/[：:]/g, "-")
-          .replace(/[^a-zA-Z0-9\u4e00-\u9fa5-]+/g, "-")
-          .replace(/-+/g, "-")
-          .replace(/^-|-$/g, "");
-        var ascii = cleaned.match(/[a-zA-Z0-9-]+/g);
-        if (!ascii) return "XM";
-        var text = ascii.join("-");
-        if (text.indexOf("-") >= 0) {
-          return text.split("-").filter(Boolean).slice(0, 2).map(function (part) {
-            return part.slice(0, 3).toUpperCase();
-          }).join("-");
-        }
-        if (text.length <= 6) return text.toUpperCase();
-        return text.slice(0, 3).toUpperCase();
-      }
-
-      function batchCode(value) {
-        var raw = (value || "").trim().toUpperCase();
-        if (!raw) return "B00";
-        var match = raw.match(/\d+/);
-        if (raw.indexOf("B") === 0 && match) return "B" + match[0];
-        if (raw.indexOf("BATCH") === 0 && match) return "B" + match[0];
-        return match ? "B" + match[0] : raw.replace(/[^A-Z0-9-]/g, "");
-      }
-
-      function gdsCode(value) {
-        var raw = (value || "").trim().toUpperCase();
-        if (!raw) return "G00";
-        var match = raw.match(/\d+/);
-        if (!match) return raw.replace(/[^A-Z0-9-]/g, "");
-        var num = match[0].padStart(2, "0");
-        return "G" + num;
-      }
-
-      function sampleCode(value) {
-        var raw = (value || "").trim().toUpperCase();
-        if (!raw) return "S1";
-        var match = raw.match(/\d+/);
-        if (raw.indexOf("S") === 0 && match) return "S" + match[0];
-        return match ? "S" + match[0] : raw.replace(/[^A-Z0-9-]/g, "");
-      }
-
-      function todayCode() {
-        var now = new Date();
-        return pad(now.getMonth() + 1) + pad(now.getDate());
-      }
-
-      function fullDate() {
-        var now = new Date();
-        return now.getFullYear() + "-" + pad(now.getMonth() + 1) + "-" + pad(now.getDate());
-      }
-
-      function fullDateTime() {
-        var now = new Date();
-        return fullDate() + " " + pad(now.getHours()) + ":" + pad(now.getMinutes());
-      }
-
-      function pad(num) {
-        return String(num).padStart(2, "0");
-      }
-
-      function updatePhotoRange() {
-        var start = onlyDigits(fields.photoStart.value);
-        var end = onlyDigits(fields.photoEnd.value);
-        if (!start && !end) return;
-        var value = "";
-        if (start && end) value = "IMG_" + start + "-IMG_" + end;
-        else if (start) value = "IMG_" + start;
-        else value = "IMG_" + end;
-        fields.photoFile.value = value;
-      }
-
-      function onlyDigits(value) {
-        return (value || "").replace(/\D+/g, "");
-      }
-
-      function getFormData() {
+      function collectForm(kind) {
         var data = {};
-        Object.keys(fields).forEach(function (name) {
-          data[name] = fields[name].value.trim();
+        Array.prototype.forEach.call(document.querySelectorAll("[data-" + kind + "]"), function (el) {
+          data[el.getAttribute("data-" + kind)] = clean(el.value);
         });
-        data.createdAt = fullDateTime();
-        data.activeTemplate = activeTemplate;
         return data;
       }
 
-      function setFormData(data) {
-        if (!data) return;
-        Object.keys(fields).forEach(function (name) {
-          fields[name].value = data[name] || "";
+      function fillForm(kind, data) {
+        Object.keys(data || {}).forEach(function (key) {
+          var el = document.querySelector("[data-" + kind + '="' + key + '"]');
+          if (el) el.value = data[key] || "";
         });
-        activeTemplate = data.activeTemplate || "";
-        sampleWasEdited = !!fields.sampleId.value.trim();
-        Array.prototype.forEach.call(document.querySelectorAll("[data-template]"), function (btn) {
-          btn.classList.toggle("active", btn.getAttribute("data-template") === activeTemplate);
-        });
-        updateSampleSuggestion();
+        setChip("fab_substrate", byId("fab_substrate").value);
+        setChip("fab_pattern", byId("fab_pattern").value);
+        setChip("fab_ebl_mode", byId("fab_ebl_mode").value);
+        setChip("sem_abnormal", byId("sem_abnormal").value);
+        setChip("sem_need_rework", byId("sem_need_rework").value);
       }
 
-      function buildMarkdown() {
-        var data = getFormData();
-        var date = fullDate();
-        var titleType = data.recordType || "实验记录";
-        var sampleId = data.sampleId || makeSampleId();
-        var title = date + "_" + sampleId + "_" + titleType;
+      function loadDraft(kind, defaults) {
+        var drafts = readJson(STORE_DRAFTS, {});
+        fillForm(kind, Object.assign({}, defaults, drafts[kind] || {}));
+      }
 
+      function saveDraft(kind, data) {
+        var drafts = readJson(STORE_DRAFTS, {});
+        drafts[kind] = data;
+        localStorage.setItem(STORE_DRAFTS, JSON.stringify(drafts));
+      }
+
+      function updateFabPreview() {
+        byId("fabPreview").textContent = makeSampleId(collectForm("fab"));
+      }
+
+      function updateSemPreview() {
+        byId("semPreview").textContent = makeSemFilename(collectForm("sem"));
+      }
+
+      function makeSampleId(data) {
+        var batch = normBatch(data.batch);
+        var date = compactDate(data.date);
+        var substrate = cleanToken(data.substrate || "SOI");
+        var pattern = cleanToken(data.pattern || "DicFig2");
+        var ebl = normPrefixed(data.ebl_mode, "EBL", "3");
+        var icp = normPrefixed(data.icp_time, "ICP", "90S");
+        var rie = normPrefixed(data.rie_time, "RIE", "4min");
+        var sample = normPrefixed(data.sample, "S", "1");
+        var array = normPrefixed(data.array, "P", "1");
+        var dose = normPrefixed(data.dose, "S", "70");
+        return [batch, date, substrate, pattern, ebl, icp, rie, sample, array + dose].join("_");
+      }
+
+      function makeSemFilename(data) {
+        var sample = clean(data.sample_id) || makeSampleId(collectForm("fab"));
+        sample = sample.replace(/__\d+$/, "");
+        return sample + "__" + normSemIndex(data.sem_index);
+      }
+
+      function parseSampleId(value) {
+        var raw = clean(value);
+        if (!raw) return null;
+        var sem = "";
+        var base = raw.replace(/__(\d+)$/, function (_, num) {
+          sem = num;
+          return "";
+        });
+        var parts = base.split("_");
+        if (parts.length < 9) return null;
+        var arrayDose = parts[8] || "";
+        var ad = arrayDose.match(/^(P\d+)(S\d+)$/i);
+        return {
+          batch: parts[0] || "",
+          date: parts[1] || "",
+          substrate: parts[2] || "",
+          pattern: parts[3] || "",
+          ebl_mode: parts[4] || "",
+          icp_time: (parts[5] || "").replace(/^ICP/i, ""),
+          rie_time: (parts[6] || "").replace(/^RIE/i, ""),
+          sample: parts[7] || "",
+          array: ad ? ad[1] : arrayDose,
+          dose: ad ? ad[2] : "",
+          sem_index: sem,
+          sample_id: base,
+          sem_filename: sem ? raw : ""
+        };
+      }
+
+      function parseHomeInput() {
+        var parsed = parseSampleId(byId("parseInput").value);
+        if (!parsed) {
+          byId("parseOutput").textContent = "无法拆解。请检查格式是否类似 B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70__003";
+          return;
+        }
+        byId("parseOutput").textContent = JSON.stringify(parsed, null, 2);
+      }
+
+      function mergeParsedIntoSem(parsed) {
+        if (parsed.sem_index) byId("sem_index").value = parsed.sem_index;
+      }
+
+      function saveFabRecord() {
+        var fab = collectForm("fab");
+        var sampleId = makeSampleId(fab);
+        var record = baseRecord("加工记录", fab);
+        record.sample_id = sampleId;
+        record.sem_filename = "";
+        record.sem_index = "";
+        record.operation = fab.operation;
+        record.observation = fab.observation;
+        record.abnormal = fab.abnormal_note ? "是" : "否";
+        record.need_rework = "待判断";
+        record.next_step = fab.next_step;
+        record.photo_range = makePhotoRange(fab.photo_start, fab.photo_end);
+        record.photo_note = fab.photo_note;
+        finishSave(record, "加工记录已保存");
+        updateSemSampleOptions();
+      }
+
+      function saveSemRecord() {
+        var sem = collectForm("sem");
+        var parsed = parseSampleId(sem.sample_id) || {};
+        var record = baseRecord("SEM记录", Object.assign({}, parsed, sem));
+        record.sample_id = (sem.sample_id || parsed.sample_id || "").replace(/__\d+$/, "");
+        record.sem_index = normSemIndex(sem.sem_index);
+        record.sem_filename = makeSemFilename(sem);
+        record.operation = "SEM 表征：" + (sem.area || "待补充区域");
+        record.observation = sem.observation;
+        record.abnormal = sem.abnormal || "否";
+        record.need_rework = sem.need_rework || "否";
+        record.next_step = sem.next_step;
+        record.photo_range = makePhotoRange(sem.photo_start, sem.photo_end);
+        record.photo_note = sem.photo_note;
+        record.magnification = sem.magnification;
+        record.voltage = sem.voltage;
+        record.working_distance = sem.working_distance;
+        record.area = sem.area;
+        finishSave(record, "SEM 图片记录已保存");
+      }
+
+      function baseRecord(type, data) {
+        var parsedDate = compactDate(data.date || todayDash());
+        return {
+          id: makeId(),
+          type: type,
+          batch: normBatch(data.batch || ""),
+          date: parsedDate,
+          substrate: cleanToken(data.substrate || ""),
+          pattern: cleanToken(data.pattern || ""),
+          ebl_mode: normPrefixed(data.ebl_mode || "", "EBL", ""),
+          icp_time: normPrefixed(data.icp_time || "", "ICP", ""),
+          rie_time: normPrefixed(data.rie_time || "", "RIE", ""),
+          sample: normPrefixed(data.sample || "", "S", ""),
+          array: normPrefixed(data.array || "", "P", ""),
+          dose: normPrefixed(data.dose || "", "S", ""),
+          sem_index: data.sem_index || "",
+          sample_id: data.sample_id || "",
+          sem_filename: data.sem_filename || "",
+          operation: data.operation || "",
+          observation: data.observation || "",
+          abnormal: data.abnormal || "否",
+          need_rework: data.need_rework || "否",
+          next_step: data.next_step || "",
+          photo_range: data.photo_range || "",
+          photo_note: data.photo_note || "",
+          markdown: "",
+          timestamp: new Date().toISOString()
+        };
+      }
+
+      function finishSave(record, message) {
+        record.markdown = buildMarkdown(record);
+        var records = readRecords();
+        records.unshift(record);
+        localStorage.setItem(STORE_RECORDS, JSON.stringify(records.slice(0, 500)));
+        selectedRecordId = record.id;
+        byId("detailMarkdown").value = record.markdown;
+        renderHistory();
+        showToast(message);
+      }
+
+      function buildMarkdown(record) {
+        var title = record.date + "_" + (record.sem_filename || record.sample_id || "未命名样品") + "_" + record.type;
         return [
           "---",
-          "记录时间: " + data.createdAt,
-          "记录类型: " + titleType,
-          "样品编号: " + sampleId,
-          "项目: " + data.project,
-          "批次: " + data.batch,
-          "设备地点: " + data.device,
-          "操作者: " + data.operator,
-          "照片文件: " + data.photoFile,
+          "id: " + record.id,
+          "记录时间: " + record.timestamp,
+          "记录类型: " + record.type,
+          "样品编号: " + record.sample_id,
+          "批次: " + record.batch,
+          "日期: " + record.date,
+          "基底: " + record.substrate,
+          "图案: " + record.pattern,
+          "EBL模式: " + record.ebl_mode,
+          "ICP时间: " + record.icp_time,
+          "RIE时间: " + record.rie_time,
+          "样品: " + record.sample,
+          "阵列: " + record.array,
+          "剂量: " + record.dose,
+          "SEM编号: " + record.sem_index,
+          "是否异常: " + record.abnormal,
           "---",
           "",
           "# " + title,
           "",
-          "## 1. 今天做了什么",
-          blankSafe(data.today),
+          "## 1. 基本信息",
+          "- 记录类型: " + blank(record.type),
+          "- 样品编号: `" + blank(record.sample_id) + "`",
+          "- SEM 文件名: `" + blank(record.sem_filename) + "`",
+          "- 批次/日期: " + blank(record.batch) + " / " + blank(record.date),
+          "- 基底/图案: " + blank(record.substrate) + " / " + blank(record.pattern),
           "",
-          "## 2. 样品编号",
-          sampleId,
+          "## 2. 操作内容",
+          blank(record.operation),
           "",
-          "## 3. 设备/地点",
-          blankSafe(data.device),
+          "## 3. 参数",
+          "- EBL模式: " + blank(record.ebl_mode),
+          "- ICP时间: " + blank(record.icp_time),
+          "- RIE时间: " + blank(record.rie_time),
+          "- 样品/阵列/剂量: " + blank(record.sample) + " / " + blank(record.array) + " / " + blank(record.dose),
+          record.type === "SEM记录" ? "- SEM参数: " + blank(record.magnification) + " / " + blank(record.voltage) + " / WD " + blank(record.working_distance) : "",
           "",
-          "## 4. 关键参数",
-          blankSafe(data.params),
+          "## 4. 观察结果",
+          blank(record.observation),
           "",
-          "## 5. 看到的现象",
-          blankSafe(data.observations),
+          "## 5. 异常与判断",
+          "- 是否异常: " + blank(record.abnormal),
+          "- 是否需要重加工: " + blank(record.need_rework),
           "",
-          "## 6. 不确定/异常",
-          blankSafe(data.anomalies),
+          "## 6. 下一步",
+          blank(record.next_step),
           "",
-          "## 7. 下一步",
-          blankSafe(data.nextStep),
-          "",
-          "## 8. 照片/文件编号",
-          blankSafe(data.photoFile),
+          "## 7. 文件/照片",
+          "- SEM文件名: `" + blank(record.sem_filename) + "`",
+          "- 照片范围: " + blank(record.photo_range),
+          "- 照片说明: " + blank(record.photo_note),
           ""
-        ].join("\n");
+        ].filter(function (line) { return line !== ""; }).join("\n");
       }
 
-      function blankSafe(value) {
-        return value && value.trim() ? value.trim() : "待补充";
+      function nextSem() {
+        var input = byId("sem_index");
+        input.value = normSemIndex((parseInt(input.value || "0", 10) || 0) + 1);
+        saveDraft("sem", collectForm("sem"));
+        updateSemPreview();
+        showToast("已切到下一张 " + input.value);
       }
 
-      function saveRecord() {
-        var markdown = output.value.trim() ? output.value : buildMarkdown();
-        output.value = markdown;
-        var data = getFormData();
-        var records = readRecords();
-        var id = Date.now().toString(36);
-        records.unshift({
-          id: id,
-          savedAt: new Date().toISOString(),
-          data: data,
-          markdown: markdown
+      function updateSemSampleOptions() {
+        var select = byId("sem_sample_select");
+        var current = select.value;
+        var samples = [];
+        readRecords().forEach(function (record) {
+          if (record.sample_id && samples.indexOf(record.sample_id) < 0) samples.push(record.sample_id);
         });
-        records = dedupeAndLimit(records);
-        writeRecords(records);
-        saveDraft();
-        renderHistory();
-        showToast("已保存到本机");
+        select.innerHTML = '<option value="">手动输入或从历史选择</option>';
+        samples.slice(0, 80).forEach(function (sample) {
+          var option = document.createElement("option");
+          option.value = sample;
+          option.textContent = sample;
+          select.appendChild(option);
+        });
+        select.value = current;
       }
 
-      function dedupeAndLimit(records) {
-        var seen = {};
-        return records.filter(function (record) {
-          var key = [
-            record.data.sampleId,
-            record.data.recordType,
-            record.data.photoFile,
-            record.markdown
-          ].join("|");
-          if (seen[key]) return false;
-          seen[key] = true;
-          return true;
-        }).slice(0, MAX_RECORDS);
+      function bindTodos() {
+        byId("addTodoBtn").addEventListener("click", addTodo);
       }
 
-      function readRecords() {
-        try {
-          var raw = localStorage.getItem(STORAGE_KEY);
-          return raw ? JSON.parse(raw) : [];
-        } catch (error) {
-          return [];
+      function addTodo() {
+        var text = clean(byId("todoText").value);
+        if (!text) {
+          showToast("先写任务内容");
+          return;
         }
+        var todos = readJson(STORE_TODOS, []);
+        todos.unshift({
+          id: makeId(),
+          type: byId("todoType").value,
+          sample: clean(byId("todoSample").value),
+          text: text,
+          done: false,
+          timestamp: new Date().toISOString()
+        });
+        localStorage.setItem(STORE_TODOS, JSON.stringify(todos));
+        byId("todoText").value = "";
+        renderTodos();
       }
 
-      function writeRecords(records) {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(records));
+      function renderTodos() {
+        var list = byId("todoList");
+        var todos = readJson(STORE_TODOS, []);
+        list.innerHTML = "";
+        if (!todos.length) {
+          list.innerHTML = '<div class="empty">今天还没有任务</div>';
+          return;
+        }
+        todos.forEach(function (todo) {
+          var item = document.createElement("div");
+          item.className = "task-item" + (todo.done ? " done" : "");
+          item.innerHTML =
+            '<button class="task-check" type="button" aria-label="完成"></button>' +
+            '<div class="task-title"><strong>' + esc(todo.text) + '</strong><span>' + esc(todo.type + " · " + (todo.sample || "未填样品")) + '</span></div>' +
+            '<button class="danger" type="button">删</button>';
+          item.querySelector(".task-check").addEventListener("click", function () {
+            todo.done = !todo.done;
+            localStorage.setItem(STORE_TODOS, JSON.stringify(todos));
+            renderTodos();
+          });
+          item.querySelector(".danger").addEventListener("click", function () {
+            localStorage.setItem(STORE_TODOS, JSON.stringify(todos.filter(function (x) { return x.id !== todo.id; })));
+            renderTodos();
+          });
+          list.appendChild(item);
+        });
       }
 
-      function saveDraft() {
-        try {
-          localStorage.setItem(STORAGE_KEY + "_draft", JSON.stringify({
-            data: getFormData(),
-            markdown: output.value
-          }));
-        } catch (error) {}
-      }
-
-      function loadDraft() {
-        try {
-          var raw = localStorage.getItem(STORAGE_KEY + "_draft");
-          if (!raw) return;
-          var draft = JSON.parse(raw);
-          setFormData(draft.data);
-          output.value = draft.markdown || "";
-        } catch (error) {}
+      function bindHistory() {
+        ["histSearch", "filter_batch", "filter_date", "filter_sample", "filter_pattern", "filter_ebl", "filter_icp", "filter_rie", "filter_dose", "filter_sem", "filter_abnormal", "filter_type"].forEach(function (id) {
+          byId(id).addEventListener("input", renderHistory);
+          byId(id).addEventListener("change", renderHistory);
+        });
+        byId("clearFiltersBtn").addEventListener("click", clearFilters);
+        byId("copyDetailBtn").addEventListener("click", copySelectedMarkdown);
+        byId("exportDetailBtn").addEventListener("click", exportSelectedMarkdown);
+        byId("exportAllMdBtn").addEventListener("click", exportAllMarkdown);
+        byId("exportJsonBtn").addEventListener("click", exportJson);
+        byId("clearRecordsBtn").addEventListener("click", clearRecords);
       }
 
       function renderHistory() {
-        var query = searchInput.value.trim().toLowerCase();
-        var records = readRecords().filter(function (record) {
-          if (!query) return true;
-          var data = record.data || {};
-          var haystack = [
-            data.sampleId,
-            data.device,
-            data.batch,
-            data.anomalies,
-            data.recordType,
-            data.project,
-            record.markdown
-          ].join(" ").toLowerCase();
-          return haystack.indexOf(query) >= 0;
-        });
-
-        historyList.innerHTML = "";
+        var records = filteredRecords();
+        var list = byId("historyList");
+        list.innerHTML = "";
         if (!records.length) {
-          var empty = document.createElement("div");
-          empty.className = "empty";
-          empty.textContent = query ? "没有找到匹配记录" : "还没有本机记录";
-          historyList.appendChild(empty);
+          list.innerHTML = '<div class="empty">没有匹配记录</div>';
           return;
         }
-
         records.forEach(function (record) {
-          var data = record.data || {};
-          var button = document.createElement("button");
-          button.type = "button";
-          button.className = "history-item";
-          button.innerHTML =
-            "<strong>" + escapeHtml(data.sampleId || "未命名样品") + "</strong>" +
-            "<span>" + escapeHtml((data.createdAt || "") + " · " + (data.recordType || "") + " · " + (data.device || "未填设备")) + "</span>" +
-            "<span>批次：" + escapeHtml(data.batch || "未填") + " · 照片：" + escapeHtml(data.photoFile || "未填") + "</span>";
-          button.addEventListener("click", function () {
-            setFormData(data);
-            output.value = record.markdown || buildMarkdown();
-            saveDraft();
-            window.scrollTo({ top: 0, behavior: "smooth" });
-            showToast("已打开历史 Markdown");
+          var btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "record-item";
+          btn.innerHTML =
+            "<strong>" + esc(record.sem_filename || record.sample_id || "未命名记录") + "</strong>" +
+            "<span>" + esc(record.type + " · " + record.date + " · " + record.batch + " · " + record.pattern) + "</span>" +
+            "<span>" + esc(record.ebl_mode + " · " + record.icp_time + " · " + record.rie_time + " · " + record.dose + " · 异常:" + record.abnormal) + "</span>";
+          btn.addEventListener("click", function () {
+            selectedRecordId = record.id;
+            byId("detailMarkdown").value = record.markdown || buildMarkdown(record);
+            showToast("已打开记录详情");
           });
-          historyList.appendChild(button);
+          list.appendChild(btn);
         });
       }
 
-      function copyMarkdown() {
-        var text = output.value.trim() ? output.value : buildMarkdown();
-        output.value = text;
-        if (navigator.clipboard && navigator.clipboard.writeText) {
-          navigator.clipboard.writeText(text).then(function () {
-            showToast("已复制，可粘贴到 Obsidian");
-          }).catch(fallbackCopy);
-        } else {
-          fallbackCopy();
-        }
-
-        function fallbackCopy() {
-          output.focus();
-          output.select();
-          try {
-            document.execCommand("copy");
-            showToast("已复制，可粘贴到 Obsidian");
-          } catch (error) {
-            showToast("复制失败，请手动全选复制");
-          }
-        }
+      function filteredRecords() {
+        var q = lower(byId("histSearch").value);
+        var filters = {
+          batch: lower(byId("filter_batch").value),
+          date: lower(byId("filter_date").value),
+          sample: lower(byId("filter_sample").value),
+          pattern: lower(byId("filter_pattern").value),
+          ebl_mode: lower(byId("filter_ebl").value),
+          icp_time: lower(byId("filter_icp").value),
+          rie_time: lower(byId("filter_rie").value),
+          dose: lower(byId("filter_dose").value),
+          sem_index: lower(byId("filter_sem").value),
+          abnormal: lower(byId("filter_abnormal").value),
+          type: lower(byId("filter_type").value)
+        };
+        return readRecords().filter(function (r) {
+          var hay = lower(JSON.stringify(r));
+          if (q && hay.indexOf(q) < 0) return false;
+          return Object.keys(filters).every(function (key) {
+            if (!filters[key]) return true;
+            return lower(r[key]).indexOf(filters[key]) >= 0 || (key === "sem_index" && lower(r.sem_filename).indexOf(filters[key]) >= 0);
+          });
+        });
       }
 
-      function exportCurrentMd() {
-        var text = output.value.trim() ? output.value : buildMarkdown();
-        output.value = text;
-        var data = getFormData();
-        downloadFile(fileSafe(data.sampleId || makeSampleId()) + ".md", text, "text/markdown;charset=utf-8");
+      function clearFilters() {
+        ["histSearch", "filter_batch", "filter_date", "filter_sample", "filter_pattern", "filter_ebl", "filter_icp", "filter_rie", "filter_dose", "filter_sem", "filter_abnormal", "filter_type"].forEach(function (id) {
+          byId(id).value = "";
+        });
+        renderHistory();
+      }
+
+      function selectedRecord() {
+        return readRecords().find(function (r) { return r.id === selectedRecordId; }) || null;
+      }
+
+      function copySelectedMarkdown() {
+        var record = selectedRecord();
+        var text = record ? (record.markdown || buildMarkdown(record)) : byId("detailMarkdown").value;
+        if (!text) {
+          showToast("先选择一条记录");
+          return;
+        }
+        copyText(text);
+      }
+
+      function exportSelectedMarkdown() {
+        var record = selectedRecord();
+        if (!record) {
+          showToast("先选择一条记录");
+          return;
+        }
+        download(markdownFilename(record), record.markdown || buildMarkdown(record), "text/markdown;charset=utf-8");
       }
 
       function exportAllMarkdown() {
         var records = readRecords();
         if (!records.length) {
-          showToast("暂无历史记录可导出");
+          showToast("没有记录可导出");
           return;
         }
-        var text = records.map(function (record) {
-          return record.markdown || "";
-        }).filter(Boolean).join("\n\n---\n\n");
-        downloadFile("lab-records-all-" + fullDate() + ".md", text, "text/markdown;charset=utf-8");
+        var text = records.map(function (r) { return r.markdown || buildMarkdown(r); }).join("\n\n---\n\n");
+        download("lab-records-all-" + compactDate(todayDash()) + ".md", text, "text/markdown;charset=utf-8");
       }
 
-      function exportJsonBackup() {
+      function exportJson() {
         var payload = {
-          app: "lab_record_card_pro",
-          exportedAt: new Date().toISOString(),
-          records: readRecords()
+          app: "lab_record_card_database_seed",
+          version: 2,
+          exported_at: new Date().toISOString(),
+          records: readRecords(),
+          todos: readJson(STORE_TODOS, [])
         };
-        downloadFile("lab-records-backup-" + fullDate() + ".json", JSON.stringify(payload, null, 2), "application/json;charset=utf-8");
+        download("lab-records-backup-" + compactDate(todayDash()) + ".json", JSON.stringify(payload, null, 2), "application/json;charset=utf-8");
       }
 
       function clearRecords() {
-        var ok = window.confirm("确定清空本机保存的全部记录吗？这个操作不会删除已导出的文件。");
-        if (!ok) return;
-        writeRecords([]);
+        var first = window.confirm("确定清空本机全部实验记录吗？建议先导出 JSON 备份。");
+        if (!first) return;
+        var second = window.confirm("二次确认：清空后无法从本页面恢复。继续吗？");
+        if (!second) return;
+        localStorage.setItem(STORE_RECORDS, "[]");
+        selectedRecordId = "";
+        byId("detailMarkdown").value = "";
         renderHistory();
         showToast("本机记录已清空");
       }
 
-      function downloadFile(filename, content, type) {
+      function readRecords() {
+        return readJson(STORE_RECORDS, []);
+      }
+
+      function readJson(key, fallback) {
+        try {
+          var raw = localStorage.getItem(key);
+          return raw ? JSON.parse(raw) : fallback;
+        } catch (error) {
+          return fallback;
+        }
+      }
+
+      function copyText(text) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(text).then(function () {
+            showToast("已复制 Markdown");
+          }).catch(function () {
+            fallbackCopy(text);
+          });
+        } else {
+          fallbackCopy(text);
+        }
+      }
+
+      function fallbackCopy(text) {
+        var box = document.createElement("textarea");
+        box.value = text;
+        document.body.appendChild(box);
+        box.focus();
+        box.select();
+        try {
+          document.execCommand("copy");
+          showToast("已复制 Markdown");
+        } catch (error) {
+          showToast("复制失败，请手动复制");
+        }
+        document.body.removeChild(box);
+      }
+
+      function download(filename, content, type) {
         var blob = new Blob([content], { type: type });
         var url = URL.createObjectURL(blob);
         var link = document.createElement("a");
@@ -1103,21 +1739,85 @@
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
-        setTimeout(function () {
-          URL.revokeObjectURL(url);
-        }, 800);
-        showToast("已开始导出：" + filename);
+        setTimeout(function () { URL.revokeObjectURL(url); }, 800);
+        showToast("已导出 " + filename);
       }
 
-      function fileSafe(value) {
-        return String(value || "lab-record")
-          .replace(/[\\/:*?"<>|]+/g, "-")
-          .replace(/\s+/g, "-")
-          .slice(0, 120);
+      function markdownFilename(record) {
+        return [record.date || compactDate(todayDash()), record.sample_id || "sample", record.type || "记录"].join("_").replace(/[\\/:*?"<>|]+/g, "-") + ".md";
       }
 
-      function escapeHtml(value) {
-        return String(value || "")
+      function makePhotoRange(start, end) {
+        start = onlyDigits(start);
+        end = onlyDigits(end);
+        if (start && end) return "IMG_" + start + "-IMG_" + end;
+        if (start) return "IMG_" + start;
+        if (end) return "IMG_" + end;
+        return "";
+      }
+
+      function normBatch(value) {
+        value = clean(value).toUpperCase();
+        if (!value) return "B00";
+        var n = value.match(/\d+/);
+        return n ? "B" + n[0] : cleanToken(value);
+      }
+
+      function normPrefixed(value, prefix, fallback) {
+        value = clean(value).toUpperCase();
+        if (!value) value = fallback || "";
+        if (!value) return "";
+        if (value.indexOf(prefix.toUpperCase()) === 0) return cleanToken(value);
+        return prefix + cleanToken(value);
+      }
+
+      function normSemIndex(value) {
+        var n = parseInt(onlyDigits(value) || "1", 10);
+        if (!Number.isFinite(n) || n < 1) n = 1;
+        return String(n).padStart(3, "0");
+      }
+
+      function compactDate(value) {
+        value = clean(value);
+        if (!value) return compactDate(todayDash());
+        return value.replace(/\D+/g, "").slice(0, 8);
+      }
+
+      function todayDash() {
+        var d = new Date();
+        return d.getFullYear() + "-" + pad(d.getMonth() + 1) + "-" + pad(d.getDate());
+      }
+
+      function pad(n) {
+        return String(n).padStart(2, "0");
+      }
+
+      function makeId() {
+        return "rec_" + Date.now().toString(36) + "_" + Math.random().toString(36).slice(2, 8);
+      }
+
+      function clean(value) {
+        return String(value == null ? "" : value).trim();
+      }
+
+      function cleanToken(value) {
+        return clean(value).replace(/\s+/g, "").replace(/[^A-Za-z0-9.-]/g, "");
+      }
+
+      function onlyDigits(value) {
+        return clean(value).replace(/\D+/g, "");
+      }
+
+      function blank(value) {
+        return clean(value) || "待补充";
+      }
+
+      function lower(value) {
+        return clean(value).toLowerCase();
+      }
+
+      function esc(value) {
+        return clean(value)
           .replace(/&/g, "&amp;")
           .replace(/</g, "&lt;")
           .replace(/>/g, "&gt;")
@@ -1125,17 +1825,18 @@
           .replace(/'/g, "&#039;");
       }
 
-      function showToast(message) {
-        toastEl.textContent = message;
-        toastEl.classList.add("show");
-        clearTimeout(showToast.timer);
-        showToast.timer = setTimeout(function () {
-          toastEl.classList.remove("show");
-        }, 1800);
-      }
-
       function byId(id) {
         return document.getElementById(id);
+      }
+
+      function showToast(message) {
+        var toast = byId("toast");
+        toast.textContent = message;
+        toast.classList.add("show");
+        clearTimeout(showToast.timer);
+        showToast.timer = setTimeout(function () {
+          toast.classList.remove("show");
+        }, 1800);
       }
     })();
   </script>

@@ -1,18 +1,18 @@
 # iPhone 实验记录卡 Web App
 
-这个目录包含一个可部署到 GitHub Pages 的单文件 Web App：
+这是一个面向微纳加工现场的轻量实验数据库雏形。它部署在 GitHub Pages 上，用 iPhone Safari 打开后可以添加到主屏幕，像一个小 App 一样使用。
 
-- `index.html`
+当前重点服务：
 
-它用于快速记录微纳加工、SEM、光学测试、GDS/仿真和问题复盘信息，并生成可复制到 Obsidian 的 Markdown。
+- 超净间加工记录
+- SEM 记录
+- 样品编号和 SEM 文件名追踪
+- Obsidian Markdown 导出
+- JSON 备份
+
+光学测试、GDS/仿真、问题复盘目前作为扩展入口保留。
 
 ## 访问地址
-
-GitHub 仓库：
-
-```text
-https://github.com/mengjiewang4-maker/MengjieVault
-```
 
 GitHub Pages 地址：
 
@@ -20,54 +20,24 @@ GitHub Pages 地址：
 https://mengjiewang4-maker.github.io/MengjieVault/100-app/
 ```
 
-用 iPhone Safari 打开上面的 GitHub Pages 地址，就可以使用实验记录卡。
+GitHub 仓库：
 
-## GitHub Pages 部署
+```text
+https://github.com/mengjiewang4-maker/MengjieVault
+```
 
-目标：让 iPhone Safari 访问这个网址：
+## iPhone Safari 如何打开
+
+1. 在 iPhone 上打开 Safari。
+2. 输入：
 
 ```text
 https://mengjiewang4-maker.github.io/MengjieVault/100-app/
 ```
 
-步骤：
+3. 页面打开后，先进入“加工记录”或“SEM记录”测试一条记录。
 
-1. 把当前项目推送到 GitHub 仓库。
-2. 打开 GitHub 仓库页面。
-3. 进入 `Settings`。
-4. 左侧找到 `Pages`。
-5. 在 `Build and deployment` 里选择：
-   - `Source`: `Deploy from a branch`
-   - `Branch`: `main`
-   - 文件夹：`/root`
-6. 点击 `Save`。
-7. 等待 GitHub Pages 构建完成。
-8. 用 iPhone Safari 打开：
-
-```text
-https://mengjiewang4-maker.github.io/MengjieVault/100-app/
-```
-
-说明：GitHub Pages 是 GitHub 提供的静态网页托管服务。静态网页指不需要服务器程序运行的网页，本 App 只有 HTML、CSS 和 JavaScript，所以适合直接部署。
-
-## 部署后检查
-
-1. 在电脑浏览器打开 `https://mengjiewang4-maker.github.io/MengjieVault/100-app/`。
-2. 确认页面标题是“iPhone 实验记录卡 Pro”。
-3. 点击“SEM”模板，确认表单能自动填入提示。
-4. 输入项目名、批次、GDS 版本、样品号，确认样品编号会自动生成。
-5. 点击“生成”，确认 Markdown 输出区有内容。
-
-如果页面显示 404，通常是 GitHub Pages 还没构建完成，等 1 到 3 分钟后刷新。404 是网页找不到的提示。
-
-## 如何在 iPhone Safari 打开
-
-1. 确认 GitHub Pages 已经部署成功。
-2. 在 iPhone 上打开 Safari。
-3. 输入 `https://mengjiewang4-maker.github.io/MengjieVault/100-app/`。
-4. 页面打开后，先试着填写一条记录并点击底部的“生成”。
-
-说明：Safari 是苹果手机自带浏览器。这个页面不依赖外部库，打开后主要数据保存在手机浏览器本机。
+说明：Safari 是苹果手机自带浏览器。这个 App 不依赖外部库，数据默认保存在手机浏览器本机。
 
 ## 如何添加到主屏幕
 
@@ -75,53 +45,199 @@ https://mengjiewang4-maker.github.io/MengjieVault/100-app/
 2. 点击底部分享按钮。
 3. 选择“添加到主屏幕”。
 4. 名称可以改成“实验记录卡”。
-5. 之后从主屏幕打开时，会更像一个轻量 App。
+5. 之后从主屏幕打开，界面会更像轻量 App。
 
-建议：第一次添加到主屏幕后，尽量固定使用这个入口记录实验。因为本机记录保存在浏览器本地数据里，换浏览器或清理 Safari 网站数据可能会影响历史记录。
+建议固定使用同一个入口记录实验。因为本机数据保存在浏览器 `localStorage` 中，换浏览器或清理 Safari 网站数据可能会清掉历史记录。
 
-## 手机现场使用建议
+## 样品和 SEM 文件名规则
 
-1. 实验开始前先打开主屏幕里的“实验记录卡”。
-2. 选择一个快捷模板，例如“加工”或“SEM”。
-3. 先填样品编号相关信息，再记录关键参数。
-4. 每做完一个关键步骤就点击“保存”。
-5. 实验结束后点击“导出当前 .md”或“复制”到 Obsidian。
+当前规则示例：
 
-## 如何复制到 Obsidian
+```text
+B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70__003
+```
 
-1. 在 App 里填好记录。
-2. 点击底部“生成”。
-3. 点击底部“复制”。
-4. 打开 Obsidian。
-5. 新建一篇笔记，把内容粘贴进去。
+字段含义：
 
-Obsidian 是本地笔记软件；Markdown 是一种纯文本笔记格式，适合长期保存、搜索和版本管理。
+| 字段 | 含义 |
+|---|---|
+| `B16` | 第 16 批次 |
+| `20260522` | 日期 |
+| `SOI` / `Si` | 基底类型 |
+| `DicFig2` / `Dirac` / `Disclination` | 图案类型 |
+| `EBL3` / `EBL6` | EBL 模式 |
+| `ICP90S` | ICP 刻蚀时间 |
+| `RIE4min` | RIE 去胶或刻蚀时间 |
+| `S1` / `S2` | 样品编号 |
+| `P2` | 图案阵列编号 |
+| `S70` | 剂量，例如 70% |
+| `003` | SEM 图片编号 |
 
-## 如何导出 Markdown
+App 支持：
 
-当前记录：
+- 自动生成样品编号
+- 自动拆解已有编号
+- SEM 图片编号自动递增
+- 自动生成完整 SEM 图片文件名
 
-1. 填写记录并点击“生成”。
-2. 点击“导出当前 .md”。
-3. 得到一个单独的 Markdown 文件。
+## 如何记录加工
 
-全部记录：
+1. 首页点击“加工记录”。
+2. 填写批次、日期、基底、图案、EBL 模式、ICP 时间、RIE 时间、样品、阵列和剂量。
+3. 查看“样品编号预览”，确认编号是否正确。
+4. 用短句填写：
+   - 今天做了什么
+   - 观察结果
+   - 现场异常
+   - 下一步
+5. 可选填写照片编号范围，例如 `2381` 到 `2388`，自动生成 `IMG_2381-IMG_2388`。
+6. 点击底部“保存”。
 
-1. 先用“保存”把多条记录保存在本机。
-2. 点击“导出全部 .md”。
-3. 得到一个合并后的 Markdown 文件。
+保存后会生成一条 JSON 记录，并自动生成对应 Markdown。
+
+## 如何记录 SEM
+
+1. 首页点击“SEM记录”。
+2. 从“选择已有样品”中选择加工记录保存过的样品，或手动输入样品编号。
+3. 填写 SEM 图片编号，例如 `001`。
+4. App 自动生成完整 SEM 文件名，例如：
+
+```text
+B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70__001
+```
+
+5. 填写放大倍率、加速电压、工作距离、拍摄区域、图片说明。
+6. 标记是否异常、是否需要重加工。
+7. 点击底部“保存”。
+
+每张 SEM 图都会保存为独立 JSON 记录，并关联到样品编号。
+
+## 如何连续记录 SEM 图片
+
+连续拍摄时推荐流程：
+
+1. 先选择或输入样品编号。
+2. 填写第一张 SEM 编号，例如 `001`。
+3. 填写本张图片说明。
+4. 点击“保存”。
+5. 点击“下一张”，编号会自动变为 `002`。
+6. 修改拍摄区域和图片说明。
+7. 再次点击“保存”。
+
+这样可以快速得到：
+
+```text
+...__001
+...__002
+...__003
+```
+
+每一张图都有独立记录，后续搜索和导出更方便。
+
+## 如何导出 Markdown 到 Obsidian
+
+1. 进入“历史记录”。
+2. 点击某条记录。
+3. 点击“复制 Markdown”。
+4. 打开 Obsidian，新建笔记并粘贴。
+
+也可以点击“导出当前 .md”，得到单条 Markdown 文件。
+
+导出文件名格式：
+
+```text
+YYYYMMDD_样品编号_记录类型.md
+```
+
+Markdown 会包含 frontmatter，方便后续用 Obsidian Dataview 查询。frontmatter 是 Markdown 顶部的结构化信息区。
 
 ## 如何备份 JSON
 
-1. 点击“导出 JSON 备份”。
-2. 保存生成的 `.json` 文件。
-3. JSON 是结构化备份格式，适合以后恢复、整理或用脚本批量处理。
+1. 进入“历史记录”。
+2. 点击“导出 JSON 备份”。
+3. 保存生成的 `.json` 文件。
 
-注意：本机保存使用浏览器的 `localStorage`。`localStorage` 是浏览器提供的本地小数据库，清理 Safari 网站数据时可能会被删除，所以重要记录建议定期导出 Markdown 和 JSON。
+JSON 是结构化数据格式，适合未来迁移到 SQLite、Supabase、Firebase、Notion API 或 Obsidian Dataview。
+
+建议：每次重要实验结束后，同时导出 Markdown 和 JSON。
+
+## 历史记录搜索和筛选
+
+历史记录支持按以下字段筛选：
+
+- 批次
+- 日期
+- 样品
+- 图案类型
+- EBL 模式
+- ICP 时间
+- RIE 时间
+- 剂量
+- SEM 编号
+- 是否异常
+- 记录类型
+
+点击历史记录可查看详情、复制 Markdown、导出当前 `.md`、导出全部 `.md`、导出 JSON 备份。
+
+清空本机记录需要二次确认。
+
+## 数据结构说明
+
+每条记录以 JSON 对象保存，核心字段如下：
+
+```json
+{
+  "id": "rec_xxx",
+  "type": "加工记录",
+  "batch": "B16",
+  "date": "20260522",
+  "substrate": "SOI",
+  "pattern": "DicFig2",
+  "ebl_mode": "EBL3",
+  "icp_time": "ICP90S",
+  "rie_time": "RIE4min",
+  "sample": "S1",
+  "array": "P2",
+  "dose": "S70",
+  "sem_index": "003",
+  "sample_id": "B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70",
+  "sem_filename": "B16_20260522_SOI_DicFig2_EBL3_ICP90S_RIE4min_S1_P2S70__003",
+  "operation": "完成 EBL 曝光、ICP 90S、RIE 去胶",
+  "observation": "孔阵列完整，疑似残胶薄膜",
+  "abnormal": "否",
+  "need_rework": "否",
+  "next_step": "继续拍 SEM 或进入光学测试",
+  "photo_range": "IMG_2381-IMG_2388",
+  "photo_note": "iPhone 拍屏范围",
+  "markdown": "...",
+  "timestamp": "2026-05-27T..."
+}
+```
+
+这些字段保留了未来数据库化需要的主键、类型、样品编号、SEM 文件名、工艺参数、观察、异常判断和导出文本。
+
+## 未来数据库升级建议
+
+当前版本使用 `localStorage`。`localStorage` 是浏览器本地小数据库，适合快速原型，但不适合长期唯一备份。
+
+未来可升级为：
+
+1. **SQLite**：适合本地结构化数据库，便于离线分析。
+2. **Supabase**：适合网页同步、多设备访问和 SQL 查询。
+3. **Firebase**：适合快速云同步和移动端使用。
+4. **Notion API**：适合把实验记录同步到 Notion 数据库。
+5. **Obsidian Dataview**：适合继续用 Markdown，但用 frontmatter 做表格查询。
+
+推荐路线：
+
+1. 继续用本 App 记录 1 到 2 周。
+2. 定期导出 JSON。
+3. 根据真实字段稳定程度，决定是否迁移到 SQLite 或 Supabase。
 
 ## 现场实验最低记录标准
 
 每次实验至少记录：
+
 1. 用的是哪个样品
 2. 今天做了什么
 3. 用了什么设备
