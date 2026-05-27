@@ -485,6 +485,34 @@
       text-decoration: line-through;
     }
 
+    .step-stack {
+      display: grid;
+      gap: 10px;
+    }
+
+    .step-photo {
+      display: grid;
+      gap: 10px;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--panel-solid);
+      border: 1px solid var(--line);
+    }
+
+    .step-photo strong {
+      display: block;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .step-photo span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
     .empty {
       padding: 18px 10px;
       color: var(--muted);
@@ -782,6 +810,60 @@
           <div class="field">
             <label for="fab_next_step">下一步</label>
             <input id="fab_next_step" data-fab="next_step" placeholder="拍 SEM，检查侧壁和孔径；必要时 RIE 去胶后复拍">
+          </div>
+
+          <div class="field">
+            <label>每个加工步骤拍照</label>
+            <div class="step-stack" id="fabStepPhotos">
+              <div class="step-photo" data-step="基底处理">
+                <div><strong>1. 基底处理</strong><span>样品盒、清洗后表面、烘烤前后状态。</span></div>
+                <input type="file" accept="image/*" capture="environment" multiple data-step-file="基底处理">
+                <div class="preview"><small>已选照片</small><code data-step-output="基底处理">尚未选择照片</code></div>
+                <input placeholder="照片说明，例如清洗后无明显颗粒" data-step-note="基底处理">
+              </div>
+              <div class="step-photo" data-step="旋涂/前烘">
+                <div><strong>2. 旋涂/前烘</strong><span>胶瓶、旋涂参数、热板温度、胶面状态。</span></div>
+                <input type="file" accept="image/*" capture="environment" multiple data-step-file="旋涂/前烘">
+                <div class="preview"><small>已选照片</small><code data-step-output="旋涂/前烘">尚未选择照片</code></div>
+                <input placeholder="照片说明，例如 AR-P 6200.09，150C 90s" data-step-note="旋涂/前烘">
+              </div>
+              <div class="step-photo" data-step="EBL曝光">
+                <div><strong>3. EBL曝光</strong><span>样品台、曝光文件、剂量表、设备参数页。</span></div>
+                <input type="file" accept="image/*" capture="environment" multiple data-step-file="EBL曝光">
+                <div class="preview"><small>已选照片</small><code data-step-output="EBL曝光">尚未选择照片</code></div>
+                <input placeholder="照片说明，例如 EBL3，dose S70，写场正常" data-step-note="EBL曝光">
+              </div>
+              <div class="step-photo" data-step="显影/定影">
+                <div><strong>4. 显影/定影</strong><span>BA 显影、IPA 定影、氮气吹干、绿光显微镜初看。</span></div>
+                <input type="file" accept="image/*" capture="environment" multiple data-step-file="显影/定影">
+                <div class="preview"><small>已选照片</small><code data-step-output="显影/定影">尚未选择照片</code></div>
+                <input placeholder="照片说明，例如 BA 60s，IPA 10s，阵列可见" data-step-note="显影/定影">
+              </div>
+              <div class="step-photo" data-step="ICP刻蚀">
+                <div><strong>5. ICP刻蚀</strong><span>ICP 参数页、载片固定、刻蚀后样品状态。</span></div>
+                <input type="file" accept="image/*" capture="environment" multiple data-step-file="ICP刻蚀">
+                <div class="preview"><small>已选照片</small><code data-step-output="ICP刻蚀">尚未选择照片</code></div>
+                <input placeholder="照片说明，例如 HBr 50sccm，ICP 90S" data-step-note="ICP刻蚀">
+              </div>
+              <div class="step-photo" data-step="RIE去胶">
+                <div><strong>6. RIE去胶</strong><span>O2 plasma 参数页、去胶前后对比、疑似残胶。</span></div>
+                <input type="file" accept="image/*" capture="environment" multiple data-step-file="RIE去胶">
+                <div class="preview"><small>已选照片</small><code data-step-output="RIE去胶">尚未选择照片</code></div>
+                <input placeholder="照片说明，例如 RIE 4min，薄膜残留待确认" data-step-note="RIE去胶">
+              </div>
+              <div class="step-photo" data-step="绿光显微镜检查">
+                <div><strong>7. 绿光显微镜检查</strong><span>低倍总览、阵列完整性、过曝/欠曝初判。</span></div>
+                <input type="file" accept="image/*" capture="environment" multiple data-step-file="绿光显微镜检查">
+                <div class="preview"><small>已选照片</small><code data-step-output="绿光显微镜检查">尚未选择照片</code></div>
+                <input placeholder="照片说明，例如 P2 阵列完整，边缘区域较暗" data-step-note="绿光显微镜检查">
+              </div>
+              <div class="step-photo" data-step="SEM前样品状态">
+                <div><strong>8. SEM前样品状态</strong><span>样品盒标签、待测区域、污染/破损风险。</span></div>
+                <input type="file" accept="image/*" capture="environment" multiple data-step-file="SEM前样品状态">
+                <div class="preview"><small>已选照片</small><code data-step-output="SEM前样品状态">尚未选择照片</code></div>
+                <input placeholder="照片说明，例如 样品 S1 P2 待拍 SEM" data-step-note="SEM前样品状态">
+              </div>
+            </div>
           </div>
 
           <div class="row">
@@ -1087,6 +1169,7 @@
         bindNavigation();
         bindChipGroups();
         bindFab();
+        bindFabStepPhotos();
         bindSem();
         bindTodos();
         bindHistory();
@@ -1133,7 +1216,7 @@
             ["历史", "dark", function () { showView("history"); }]
           ],
           fabrication: [
-            ["预览", "", function () { copyText(buildMarkdown(buildFabRecord(false))); }],
+            ["预览", "", function () { copyText(buildMarkdown(makeFabRecord(false))); }],
             ["保存", "green", saveFabRecord],
             ["历史", "dark", function () { showView("history"); }]
           ],
@@ -1219,6 +1302,19 @@
           el.addEventListener("change", function () {
             saveDraft("fab", collectForm("fab"));
             updateFabPreview();
+          });
+        });
+      }
+
+      function bindFabStepPhotos() {
+        Array.prototype.forEach.call(document.querySelectorAll("[data-step-file]"), function (input) {
+          input.addEventListener("change", function () {
+            var step = input.getAttribute("data-step-file");
+            var names = Array.prototype.map.call(input.files || [], function (file) { return file.name; });
+            input.setAttribute("data-selected-files", names.join(", "));
+            var output = document.querySelector('[data-step-output="' + step + '"]');
+            if (output) output.textContent = names.length ? names.join(", ") : "尚未选择照片";
+            showToast(step + " 已选择 " + names.length + " 张照片");
           });
         });
       }
@@ -1349,6 +1445,12 @@
       }
 
       function saveFabRecord() {
+        var record = makeFabRecord(true);
+        finishSave(record, "加工记录已保存");
+        updateSemSampleOptions();
+      }
+
+      function makeFabRecord(persist) {
         var fab = collectForm("fab");
         var sampleId = makeSampleId(fab);
         var record = baseRecord("加工记录", fab);
@@ -1362,8 +1464,9 @@
         record.next_step = fab.next_step;
         record.photo_range = makePhotoRange(fab.photo_start, fab.photo_end);
         record.photo_note = fab.photo_note;
-        finishSave(record, "加工记录已保存");
-        updateSemSampleOptions();
+        record.step_photos = collectStepPhotos();
+        if (persist) saveDraft("fab", fab);
+        return record;
       }
 
       function saveSemRecord() {
@@ -1412,6 +1515,7 @@
           next_step: data.next_step || "",
           photo_range: data.photo_range || "",
           photo_note: data.photo_note || "",
+          step_photos: data.step_photos || [],
           markdown: "",
           timestamp: new Date().toISOString()
         };
@@ -1483,8 +1587,33 @@
           "- SEM文件名: `" + blank(record.sem_filename) + "`",
           "- 照片范围: " + blank(record.photo_range),
           "- 照片说明: " + blank(record.photo_note),
+          formatStepPhotos(record.step_photos),
           ""
         ].filter(function (line) { return line !== ""; }).join("\n");
+      }
+
+      function collectStepPhotos() {
+        return Array.prototype.map.call(document.querySelectorAll(".step-photo"), function (box) {
+          var step = box.getAttribute("data-step");
+          var fileInput = box.querySelector("[data-step-file]");
+          var noteInput = box.querySelector("[data-step-note]");
+          return {
+            step: step,
+            files: clean(fileInput && fileInput.getAttribute("data-selected-files")),
+            note: clean(noteInput && noteInput.value)
+          };
+        }).filter(function (item) {
+          return item.files || item.note;
+        });
+      }
+
+      function formatStepPhotos(items) {
+        if (!items || !items.length) return "- 分步骤照片: 待补充";
+        return [
+          "- 分步骤照片:"
+        ].concat(items.map(function (item) {
+          return "  - " + item.step + ": " + blank(item.files) + "；" + blank(item.note);
+        })).join("\n");
       }
 
       function nextSem() {
