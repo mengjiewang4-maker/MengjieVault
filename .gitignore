@@ -6,6 +6,7 @@ raw/
 .~*
 ~$*
 **/.obsidian/workspace.json
+**/.obsidian/plugins/*/translation-log.json
 __pycache__/
 *.pyc
 .venv/

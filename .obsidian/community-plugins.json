@@ -1,4 +1,5 @@
 [
   "terminal",
-  "vscode-editor"
+  "vscode-editor",
+  "mouse-tooltip-translator"
 ]
