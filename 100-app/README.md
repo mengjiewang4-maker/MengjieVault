@@ -1,6 +1,24 @@
+---
+title: 100-app 入口
+date: 2026-05-28
+updated: 2026-05-28
+tags:
+  - 库结构
+  - app
+  - index
+---
+
 # iPhone 实验记录卡 Web App
 
 这是一个面向微纳加工现场的轻量实验数据库雏形。它部署在 GitHub Pages 上，用 iPhone Safari 打开后可以添加到主屏幕，像一个小 App 一样使用。
+
+## 快速入口
+
+| 文件/地址 | 用途 |
+| --- | --- |
+| [[100-app/index.html|index.html]] | Web App 主文件。 |
+| [[100-app/README|README]] | 当前说明页。 |
+| `https://mengjiewang4-maker.github.io/MengjieVault/100-app/` | iPhone Safari 访问地址。 |
 
 当前重点服务：
 
@@ -87,11 +105,6 @@ App 支持：
 2. 填写批次、日期、基底、图案、EBL 模式、ICP 时间、RIE 时间、样品、阵列和剂量。
 3. 如果同一批次做了多个样品，样品编号可以写成 `S1-S2-S3`。
 4. 查看“样品编号预览”，确认每个样品编号是否正确。
-4. 用短句填写：
-   - 今天做了什么
-   - 观察结果
-   - 现场异常
-   - 下一步
 5. 用短句填写：
    - 今天做了什么
    - 观察结果
