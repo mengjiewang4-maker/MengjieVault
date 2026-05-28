@@ -432,13 +432,13 @@ def write_readme(
 在当前目录执行：
 
 ```bash
-python3 scripts/comsol_mph_to_gds.py disclination_1.mph
+python3 scripts_20260521_1/comsol_mph_to_gds.py origin/disclination_1.mph
 ```
 
 如果需要改变圆孔近似精度：
 
 ```bash
-python3 scripts/comsol_mph_to_gds.py disclination_1.mph --circle-points 64
+python3 scripts_20260521_1/comsol_mph_to_gds.py origin/disclination_1.mph --circle-points 64
 ```
 
 ## 几何来源
@@ -461,8 +461,8 @@ python3 scripts/comsol_mph_to_gds.py disclination_1.mph --circle-points 64
 
 def main() -> int:
     parser = argparse.ArgumentParser(description="从 COMSOL .mph 内部几何参数生成 GDS。")
-    parser.add_argument("mph", nargs="?", default="disclination_1.mph", help="输入 .mph 文件")
-    parser.add_argument("--output-dir", default="output", help="输出目录")
+    parser.add_argument("mph", nargs="?", default="origin/disclination_1.mph", help="输入 .mph 文件")
+    parser.add_argument("--output-dir", default="output_20260521_1", help="输出目录")
     parser.add_argument("--output-prefix", default="disclination_from_comsol", help="输出文件名前缀")
     parser.add_argument("--circle-points", type=int, default=96, help="每个圆孔的多边形点数，建议 64 或 96")
     parser.add_argument("--set-param", action="append", default=[], help="覆盖 COMSOL 参数，例如 --set-param 'a=554[nm]' --set-param 'r=0.2*a'")

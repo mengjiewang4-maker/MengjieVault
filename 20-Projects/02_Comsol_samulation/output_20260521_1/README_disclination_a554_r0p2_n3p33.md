@@ -2,7 +2,7 @@
 
 ## 输入文件
 
-- COMSOL 仿真文件：`disclination_1.mph`
+- COMSOL 仿真文件：`origin/disclination_1.mph`
 - 读取来源：`.mph` 内部的 `dmodel.xml` 几何特征，而不是仿真截图。
 
 ## 输出文件
@@ -34,13 +34,13 @@
 在当前目录执行：
 
 ```bash
-python3 scripts/comsol_mph_to_gds.py disclination_1.mph
+python3 scripts_20260521_1/comsol_mph_to_gds.py origin/disclination_1.mph
 ```
 
 如果需要改变圆孔近似精度：
 
 ```bash
-python3 scripts/comsol_mph_to_gds.py disclination_1.mph --circle-points 64
+python3 scripts_20260521_1/comsol_mph_to_gds.py origin/disclination_1.mph --circle-points 64
 ```
 
 ## 几何来源

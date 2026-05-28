@@ -132,7 +132,7 @@ def read_svg_circles(path: Path) -> Tuple[List[Circle], List[List[Tuple[float, f
 def main() -> int:
     parser = argparse.ArgumentParser(description="把 DXF/CSV/SVG 几何转换为 GDS。")
     parser.add_argument("input", help="输入 DXF/CSV/SVG")
-    parser.add_argument("--output-dir", default="output")
+    parser.add_argument("--output-dir", default="output_20260521_1")
     parser.add_argument("--circle-points", type=int, default=96)
     args = parser.parse_args()
 

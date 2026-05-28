@@ -42,18 +42,17 @@ circle_1,0.1398053,-0.1924255,0.0735
 导出后在本目录运行：
 
 ```bash
-python3 scripts/convert_dxf_to_gds.py comsol_export/geometry.dxf
+python3 scripts_20260521_1/convert_dxf_to_gds.py comsol_export/geometry.dxf
 ```
 
 或：
 
 ```bash
-python3 scripts/convert_dxf_to_gds.py comsol_export/holes.csv
+python3 scripts_20260521_1/convert_dxf_to_gds.py comsol_export/holes.csv
 ```
 
-输出会写到 `output/`。
+输出会写到 `output_20260521_1/`。
 
 ## 为什么不要用截图
 
 仿真截图包含颜色场、坐标轴、抗锯齿、缩放和 UI 元素，无法可靠代表真实加工轮廓。截图轮廓提取会引入孔径误差、边界误差和拓扑错误，因此只能用于人工核对外观，不能作为微纳加工版图来源。
-

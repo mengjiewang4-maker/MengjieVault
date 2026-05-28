@@ -9,6 +9,7 @@ raw/
 __pycache__/
 *.pyc
 .venv/
+.python_deps/
 .idea/
 .vscode/
 .ipynb_checkpoints/
@@ -19,3 +20,6 @@ codex_job/code/Project_Replication_Vortex/output/
 20-Projects/Project_Replication_Vortex/output/
 *.gds
 *.oas
+*.mph
+*.baiduyun.uploading.cfg
+*_extended_*um_params.json
